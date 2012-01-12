@@ -4,20 +4,20 @@
 <title>Life Figure-Outer Application</title>
 <style type="text/css">
 
-	.top {
-        background-color:#cccccc;
-		color:black;
-    }
 	
-	.navigation {
-		background-color:black;
-	}
 	
 	body {
 		margin-left:20px;
 		background-color:#aaaaaa;
-		font-family:verdana
+		font-family:verdana;
 	}
+	
+	div.top {
+        background-color:#cccccc;
+		color:black;
+		border-style:solid;
+		border-width:1px;
+    }
 	
 	h1 {
 		color:black;
@@ -25,13 +25,15 @@
 	}
 	
 	header {
-		margin: 0px;
-		
+		margin-top: -20px;
 		color:#666666;
+		margin-left:10px;
+		margin-bottom:10px;
 	}
 	
-	
     nav ul li {
+		color:white;
+		list-style-type:none;
         float:left;
         margin-left:20px;
         display:block;
@@ -50,18 +52,19 @@
 	Figuring out your life for you, so you don't have to...
 </header>
 </div>
-<nav class ="navigation">
+<div class = "menu" style="background-color:black;">
+<nav>
         <ul>
-            <li><a href="index.html">Home</a></li>
+            <li>Home<li>
             <li>Interests</li>
 			<li>Health</li>
 			<li>Academic</li>
 			<li>Professional</li>
 			<li>Fun</li>
 			<li>Evil</li>
-        </ul>
-    <div class="clear"></div>       
-    </nav>
+        </ul>      
+    </nav><p></p>
 </div>
+<div></div>
 </body>
 </html>
