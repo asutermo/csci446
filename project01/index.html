@@ -3,7 +3,17 @@
 <head>
 	<title>Life Figure-Outer Application</title>
 	<meta name="author" content="Andrew Suter-Morris">
-	<link rel="stylesheet" type="text/css" href="layout.css"> 
+	<link rel="stylesheet" type="text/css" href="layout.css">
+	<script type = "text/javascript">
+		function popup() {
+			val = document.getElementById("feeling");
+			if (val.value == '')
+			{
+				alert("Surely you feel something");
+			}
+		
+		}
+	</script>
 </head>
 
 <body>
@@ -30,14 +40,14 @@
 		<div id = "main-content">
 			<div id ="left">
 				<h2>Lorem Ipsum Doler Sit Amet.</h2>
-				<form name = "do_feel" method = "get">
+				<form name = "do_feel" onsubmit="javascript:popup()">
 					<table id = "feelings">
 						<thead></thead>
 						<tbody>
 							<tr>
 								<td>How are you feeling?</td>
 								<td>
-									<input type = "text" name = "feeling" />
+									<input type = "text" id = "feeling" name = "feeling" />
 								</td>
 							</tr>
 							<tr>
@@ -54,7 +64,7 @@
 							<tr>
 								<td> &nbsp </td>
 								<td>
-									<input type = "submit" value = "Feel me!" />
+									<input class="button" name="submit" type = "submit" value = "Feel me!" onclick= "popup()" />
 								</td>
 							</tr>	
 						</tbody>
