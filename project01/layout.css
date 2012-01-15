@@ -20,6 +20,13 @@ h1{
 	padding: 5px 5px 0px 5px;
 }
 
+a {
+	text-decoration:none;
+	position: relative;
+	z-index: 25;
+	color: #ffffff;
+}
+
 p {
 	color:black;
 	margin: 0;
