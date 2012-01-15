@@ -1,7 +1,8 @@
 body {
 	margin-left:20px;
 	background-color:#aaaaaa;
-	font-family:verdana;
+	font-family:arial;
+	padding:0;
 }
 
 div#top {
@@ -11,22 +12,36 @@ div#top {
 	border-width:1px;
 }
 
-h1 {
+h1, p {
 	color:black;
-	margin-bottom: 0px;
+	margin: 0;
+	padding: 5px 5px 0px 5px;
 }
 
 header {
-	margin-top: -20px;
 	color:#666666;
-	margin-left:10px;
-	margin-bottom:10px;
+	height:auto;
 }
 
-nav ul li {
+div#menu {
+	background-color:black;
+	height:40px;
+	margin-top:0px;
+}
+
+ul#links {
+	text-align:center;
 	color:white;
 	list-style-type:none;
+	margin:0;
+	padding:0;
+}
+
+ul#links li {
+	
+	height:inherit;
+	padding-right: 20px;
+	padding-left: 20px;
+	display:inline block;
 	float:left;
-	margin-left:20px;
-	display:block;
 }
