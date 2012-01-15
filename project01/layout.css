@@ -26,6 +26,13 @@ p {
 	padding: 5px 5px 0px 5px;
 }
 
+h5 {
+	padding: 0 0 0 0;
+	
+	margin: 0 5px 5px 5px;
+	color: #666666;
+	font-weight: normal;
+}
 header {
 	color:#666666;
 	height:auto;
