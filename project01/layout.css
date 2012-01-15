@@ -45,6 +45,7 @@ div#main-content {
 	background-color:white;
 	width:inherit;
 	height:250px;
+	margin-left:20px;
 }
 
 div#feelings {
@@ -66,11 +67,13 @@ ul#links {
 }
 
 ul#links li {
+	font-weight:bold;
 	height:inherit;
 	padding-right:20px;
 	padding-left:20px;
 	display:inline block;
 	float:left;
+	margin-top:10px;
 }
 
 div#right {
@@ -83,11 +86,14 @@ div#right {
 
 div#footer {
 	margin-top:30px;
-	margin-left:-1px;
+	margin-left:-21px;
 	margin-right:-1px;
 	background-color:#f0f0ff;
 	height:50px;
 	width:auto;
 	border-style:solid;
 	border-width:1px;
+	font-size:12px;
+	font-style:bold;
+	text-align:center;
 }
