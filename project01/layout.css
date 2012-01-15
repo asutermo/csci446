@@ -2,6 +2,7 @@ body {
 	margin-left:20px;
 	background-color:#aaaaaa;
 	font-family:arial;
+	text-align:center;
 	padding:0;
 }
 
@@ -29,9 +30,18 @@ header {
 	height:auto;
 }
 
-div#main {
+div#page {
+	margin-left:auto;
+	margin-right:auto;
 	background-color:white;
+	height:auto;
+	text-align:left;
+}
 
+div#main-content {
+	background-color:white;
+	width:inherit;
+	height:250px;
 }
 
 div#menu {
@@ -49,10 +59,17 @@ ul#links {
 }
 
 ul#links li {
-	
 	height:inherit;
 	padding-right:20px;
 	padding-left:20px;
 	display:inline block;
 	float:left;
+}
+
+div#right {
+	background-color:#f0f0ff;
+	width:300px;
+	float:right;
+	display:inline;
+	margin:10px;
 }
