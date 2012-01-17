@@ -2,7 +2,9 @@ class Player
 	@health = nil
 	def play_turn(warrior)
 		@health = warrior.health unless @health
-		if warrior.feel.empty?
+		if warrior.feel.wall?
+			warrior.pivot!
+		elsif warrior.feel.empty?
 			if @health > warrior.health
 				if warrior.health < 8
 					warrior.walk! :backward
