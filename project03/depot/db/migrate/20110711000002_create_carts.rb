@@ -6,8 +6,11 @@
 # We make no guarantees that this code is fit for any purpose. 
 # Visit http://www.pragmaticprogrammer.com/titles/rails4 for more book information.
 #---
-class StoreController < ApplicationController
-  def index
-    @products = Product.order(:title)
+class CreateCarts < ActiveRecord::Migration
+  def change
+    create_table :carts do |t|
+
+      t.timestamps
+    end
   end
 end
