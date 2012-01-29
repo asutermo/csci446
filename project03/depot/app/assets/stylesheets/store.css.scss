@@ -2,7 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-/* START_HIGHLIGHT */
 .store {
   h1 {
     margin: 0;
@@ -12,7 +11,6 @@
     border-bottom: 3px dotted #77d;
   }
 
-  /* An entry in the store catalog */
   .entry {
     overflow: auto;
     margin-top: 1em;
@@ -35,7 +33,6 @@
       color: #227;
     }
 
-//#START:inline
     p, div.price_line {
       margin-left: 100px;
       margin-top: 0.5em; 
@@ -45,7 +42,6 @@
         display: inline;
       }
     }
-//#END:inline
 
     .price {
       color: #44a;
@@ -54,4 +50,3 @@
     }
   }
 }
-/* END_HIGHLIGHT */

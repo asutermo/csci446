@@ -24,12 +24,12 @@ class OrdersController < ApplicationController
   # GET /orders/new
   # GET /orders/new.json
   def new
-  
-  	@cart = current_cart
-  	if @cart.line_items.empty?
-  		redirect_to store_url, notice: "Your cart is empty"
-  		return 
-		end
+    @cart = current_cart
+    if @cart.line_items.empty?
+      redirect_to store_url, notice: "Your cart is empty"
+      return
+    end
+
     @order = Order.new
 
     respond_to do |format|
@@ -51,14 +51,17 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.save
-      	Cart.destroy(session[:cart_id])
-      	session[:cart_id] = nil
-        format.html { redirect_to store_url, notice: 'Thank you for your order' }
-        format.json { render json: @order, status: :created, location: @order }
+        Cart.destroy(session[:cart_id])
+        session[:cart_id] = nil
+        format.html { redirect_to store_url, notice: 
+          'Thank you for your order.' }
+        format.json { render json: @order, status: :created,
+          location: @order }
       else
-      	@cart = current_cart
+        @cart = current_cart
         format.html { render action: "new" }
-        format.json { render json: @order.errors, status: :unprocessable_entity }
+        format.json { render json: @order.errors,
+          status: :unprocessable_entity }
       end
     end
   end
