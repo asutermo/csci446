@@ -7,6 +7,6 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Article.delete_all
 Article.create(title: 'Do I know rails?',
-	name: 'Andrew Suter-Morris',
+	author: 'Andrew Suter-Morris',
 	body:%{<p>I think Im just kind of winging it, but who knows</p>},
 	createdate: Time.now)
