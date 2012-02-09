@@ -1,11 +1,12 @@
 require 'test_helper'
 
 class ArticleTest < ActiveSupport::TestCase
+	fixtures :articles
   # test "the truth" do
   #   assert true
   # end
   def new_article()
-  	Article.new(title: "Test Article", name: "Test author", body: "woo",
+  	Article.new(title: articles(:articletest).title, name: "Test author", body: "woo",
   												createdate: Time.now)
   end
   
