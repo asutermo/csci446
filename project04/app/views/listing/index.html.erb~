@@ -5,7 +5,7 @@
 <h2>All the World's Articles</h1>
 <div id = "list_div">
 	<table>
-		<tr>
+		<tr> 	
 			<th>Title</th>
 			<th>Author Name</th>
 			<th>Body</th>
