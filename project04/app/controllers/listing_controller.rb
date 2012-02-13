@@ -1,5 +1,5 @@
 class ListingController < ApplicationController
   def index
-  	@articles = Article.order(:createdate)
+  	@articles = Article.order(:created_at)
   end
 end

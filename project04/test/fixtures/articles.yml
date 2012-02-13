@@ -1,6 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-articletest:
+one:
   title: Article test
   name: Andrew Suter-Morris
   body: Testing this document to make sure it has some stuffs
@@ -11,3 +11,9 @@ two:
   name: MyString
   body: MyText
   createdate: 2012-02-09 12:23:45
+
+three:
+  title: MyString
+  name: MyString
+  body: MyText
+  createdate: 2012-02-09 12:23:46

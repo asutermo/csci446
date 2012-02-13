@@ -6,8 +6,7 @@ class ArticleTest < ActiveSupport::TestCase
   #   assert true
   # end
   def new_article()
-  	Article.new(title: articles(:articletest).title, name: "Test author", body: "woo",
-  												createdate: Time.now)
+  	Article.new(title: articles(:articletest).title, name: "Test author", body: "woo", createdate: Time.now)
   end
   
   test "article attributes must not be empty" do
