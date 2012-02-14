@@ -9,6 +9,7 @@
 <body class='<%= controller.controller_name %>'>
 	<h1>Articl.es</h1>
 	<h3>...with a name .com hipsters love!</h3>
+	<h2>All the World's Articles</h2>
 	
 	
 <%= yield %>

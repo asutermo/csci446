@@ -1,29 +1,25 @@
-<div>
-	<h1>Articl.es</h1>
-	<h3>...What's "Articl" in spanish anyways?</h3>
-</div>
-
 <p id="notice"><%= notice %></p>
 
-<div>
-	<ul>
-		<li><%= link_to image_tag('arrow_left.png')+' list all articles', articles_path, :title => 'Return to list of articles' %></li>
-		<li><%= link_to image_tag('shape_square_edit.png')+' edit', articles_path, :title => 'Edit the article' %></li>
-		<li><%= link_to image_tag('delete.png')+' delete', articles_path, :title => 'Delete the article' %></li>
-		<li><%= link_to image_tag('email.png')+' email', articles_path, :title => 'Email the article' %></li>
-	</ul>
-</div>
-<div>
-	<p>
-		<h2><%= @article.title %></h2>
-	</p>
-	
-	<p>
-		By <%= @article.name %>. <%= pluralize(@article.edit_count, 'edit') %> since <%= @article.createdate.strftime("%b. %d, %Y") %>.
-	</p>
-	
-	<p>
-		<%= simple_format @article.body %>
-	</p>
-</div>
+<p>
+  <b>Title:</b>
+  <%= @article.title %>
+</p>
 
+<p>
+  <b>Name:</b>
+  <%= @article.name %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%= @article.body %>
+</p>
+
+<p>
+  <b>Createdate:</b>
+  <%= @article.createdate %>
+</p>
+
+
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>
