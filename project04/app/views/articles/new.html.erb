@@ -1,5 +1,10 @@
-<h1>New article</h1>
+<div>
+	<h1>New article</h1>
+	<h3>...not just for the country of Spain</h3>
+</div>
 
+<%= link_to image_tag('arrow_left.png') + ' List all articles', articles_path,
+	:title => 'Return to list of articles' %>
+
+<h2>Creating a new article</h2>
 <%= render 'form' %>
-
-<%= link_to 'Back', articles_path %>
