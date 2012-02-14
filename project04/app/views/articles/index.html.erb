@@ -15,7 +15,6 @@
 		  <th>Author</th>
 		  <th>Body</th>
 		  <th>Create date</th>
-		  <th>Edit count</th>
 		  <th></th>
 		  <th></th>
 		  <th></th>
@@ -27,11 +26,10 @@
 				<td><%= article.title %></td>
 				<td><%= article.author %></td>
 				<td><%= article.body %></td>
-				<td><%= article.create_date %></td>
-				<td><%= article.edit_count %></td>
-				<td><%= link_to 'Show', article %></td>
-				<td><%= link_to 'Edit', edit_article_path(article) %></td>
-				<td><%= link_to 'Destroy', article, confirm: 'Are you sure?', method: :delete %></td>
+				<td><%= article.create_date.strftime('%b. %d, %Y') %></td>
+				<td><%= link_to image_tag('find.png'), article, :title => 'View me' %></td>
+				<td><%= link_to image_tag('comment_edit.png'), edit_article_path(article), :title => 'Edit me' %></td>
+				<td><%= link_to image_tag('cancel.png'), article, :title => 'Delete me', confirm: 'Are you sure you wanna remove this article?', method: :delete %></td>
 			</tr>
 		<% end %>
 		</table>
