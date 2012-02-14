@@ -8,9 +8,7 @@
 <%= link_to image_tag('comment_edit.png') + ' edit', edit_article_path(@article), :title => 'Edit me' %>
 <%= link_to image_tag('cancel.png') + ' delete', @article, :title => 'Delete me', confirm: 'Are you sure you wanna remove this article?', method: :delete %>
 <%= link_to image_tag('email.png') + ' email', articles_path, :title => 'e-Mail me' %>
-<p>
-  <%= @article.title %>
-</p>
+<h2><%= @article.title %></h2>
 
 <p>
 	by <%= @article.author %>. <%= @article.edit_count %> edits since <%= @article.create_date %>.
