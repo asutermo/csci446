@@ -1,30 +1,22 @@
 <p id="notice"><%= notice %></p>
+<div>
+	<h1>Articl.es</h1>
+	<h3>...what's 'Articl' in Spanish anyways?</h3>
+</div>
 
+<%= link_to image_tag('arrow_left.png') + ' back', articles_path, :title => 'Go back to the articles' %>
+<%= link_to image_tag('comment_edit.png') + ' edit', edit_article_path(@article), :title => 'Edit me' %>
+<%= link_to image_tag('cancel.png') + ' delete', @article, :title => 'Delete me', confirm: 'Are you sure you wanna remove this article?', method: :delete %>
+<%= link_to image_tag('email.png') + ' email', articles_path, :title => 'e-Mail me' %>
 <p>
-  <b> title:</b>
   <%= @article.title %>
 </p>
 
 <p>
-  <b>Author:</b>
-  <%= @article.author %>
+	by <%= @article.author %>. <%= @article.edit_count %> edits since <%= @article.create_date %>.
 </p>
 
 <p>
   <b>Body:</b>
   <%= @article.body %>
 </p>
-
-<p>
-  <b>Create date:</b>
-  <%= @article.create_date %>
-</p>
-
-<p>
-  <b>Edit count:</b>
-  <%= @article.edit_count %>
-</p>
-
-
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
