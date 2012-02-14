@@ -1,31 +1,42 @@
-<h1>Listing articles</h1>
+<div>
+	<h1>Articl.es</h1>
+	<h3>...with a name .com hipsters love!</h3>
+</div>
 
-<table>
-  <tr>
-    <th> title</th>
-    <th>Author</th>
-    <th>Body</th>
-    <th>Create date</th>
-    <th>Edit count</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div>
+	<h2>All the World's Articles</h2>
+	<%= link_to image_tag('add.png') + ' create an article', new_article_path, :title => 'creates a new article' %>
+</div>
 
-<% @articles.each do |article| %>
-  <tr>
-    <td><%= article.title %></td>
-    <td><%= article.author %></td>
-    <td><%= article.body %></td>
-    <td><%= article.create_date %></td>
-    <td><%= article.edit_count %></td>
-    <td><%= link_to 'Show', article %></td>
-    <td><%= link_to 'Edit', edit_article_path(article) %></td>
-    <td><%= link_to 'Destroy', article, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
+<div>
+	<table>
+		<tr>
+		  <th>Title</th>
+		  <th>Author</th>
+		  <th>Body</th>
+		  <th>Create date</th>
+		  <th>Edit count</th>
+		  <th></th>
+		  <th></th>
+		  <th></th>
+		</tr>
 
+	<div>
+		<% @articles.each do |article| %>
+			<tr>
+				<td><%= article.title %></td>
+				<td><%= article.author %></td>
+				<td><%= article.body %></td>
+				<td><%= article.create_date %></td>
+				<td><%= article.edit_count %></td>
+				<td><%= link_to 'Show', article %></td>
+				<td><%= link_to 'Edit', edit_article_path(article) %></td>
+				<td><%= link_to 'Destroy', article, confirm: 'Are you sure?', method: :delete %></td>
+			</tr>
+		<% end %>
+		</table>
+	</div>
+</div>
 <br />
 
 <%= link_to 'New Article', new_article_path %>
