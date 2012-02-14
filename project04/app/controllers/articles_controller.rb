@@ -35,6 +35,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1/edit
   def edit
     @article = Article.find(params[:id])
+    session[:return_to] = request.referer
   end
 
   # POST /articles

@@ -11,7 +11,7 @@
 <h2><%= @article.title %></h2>
 
 <p>
-	by <%= @article.author %>. <%= @article.edit_count %> edits since <%= @article.create_date %>.
+	by <%= @article.author %>. <%= pluralize(@article.edit_count, 'revision') %> since <%= @article.create_date.strftime('%b. %d, %Y') %>.
 </p>
 
 <p>
