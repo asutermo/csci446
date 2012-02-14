@@ -1,0 +1,7 @@
+<div>
+	<h1>Articl.es</h1>
+	<h3>...not just for the country of Spain</h4>
+</div>
+
+<%= render 'form' %>
+

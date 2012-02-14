@@ -1,0 +1,9 @@
+<div>
+	<h1>Articl.es</h1>
+	<h3>...my cousin works for bit.ly</h3>
+</div>
+<div>
+	<%= link_to 'Back', articles_path %>
+	<h3>Editing '<%= @article.title %>'</h3>
+	<%= render 'form' %>
+</div>
