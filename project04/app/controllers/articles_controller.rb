@@ -35,13 +35,15 @@ class ArticlesController < ApplicationController
   # GET /articles/1/edit
   def edit
     @article = Article.find(params[:id])
+    session[:return_to] = request.referer
   end
 
   # POST /articles
   # POST /articles.json
   def create
     @article = Article.new(params[:article])
-
+		@article.createdate = Time.current.to_datetime
+		
     respond_to do |format|
       if @article.save
         format.html { redirect_to @article, notice: 'Article was successfully created.' }

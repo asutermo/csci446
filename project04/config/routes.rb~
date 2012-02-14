@@ -1,5 +1,5 @@
 Articles::Application.routes.draw do
-  get "listing/index"
+  get "articles/index"
 
   resources :articles
 
@@ -52,7 +52,7 @@ Articles::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'listing#index', as: ''
+  root :to => 'articles#index', as: 'article'
 
   # See how all your routes lay out with "rake routes"
 
