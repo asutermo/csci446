@@ -25,9 +25,9 @@
   </div>
   <div class="actions">
   	<% if @article.new_record? %>
-    	<%= f.submit 'Create Article' %>
+    	<%= f.submit 'Create Article', title: 'Create me' %>
   	<% else %>
-  		<%= f.submit 'Save Revision' %>
+  		<%= f.submit 'Save Revision', title: 'Save me' %>
   	<% end %>
   </div>
 <% end %>
