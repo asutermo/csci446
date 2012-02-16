@@ -1,5 +1,4 @@
 <div>
-	<h1>Articl.es</h1>
 	<h3>...with a name .com hipsters love!</h3>
 </div>
 
@@ -35,4 +34,4 @@
 </div>
 <br />
 
-<% @articles.count %> articles.
+<%= @articles.count %> articles.
