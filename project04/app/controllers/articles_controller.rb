@@ -35,6 +35,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1/edit
   def edit
     @article = Article.find(params[:id])
+    @req = request.referer
     session[:return_to] = request.referer
   end
 
@@ -60,6 +61,7 @@ class ArticlesController < ApplicationController
   def update
     @article = Article.find(params[:id])
 		@article.edit_count += 1
+		@req = request.referer
     respond_to do |format|
       if @article.update_attributes(params[:article])
         format.html { redirect_to @article, notice: 'Article was successfully updated.' }

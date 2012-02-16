@@ -1,8 +1,8 @@
-<div>
+<% content_for :subtitle do %>
 	<h3>...my cousin works for bit.ly</h3>
-</div>
+<% end %>
 <div>
-	<%= link_to image_tag('arrow_left.png') + ' back', articles_path, :title => 'Go back to the articles' %>
+	<%= link_to image_tag('arrow_left.png') + ' back', @req, :title => 'Go back to the articles' %>
 	<h3>Editing '<%= @article.title %>'</h3>
 	<%= render 'form' %>
 </div>
