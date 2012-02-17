@@ -1,6 +1,6 @@
-<div>
+<% content_for :subtitle do %>
 	<h3>...with a name .com hipsters love!</h3>
-</div>
+<% end %>
 
 <div>
 	<h2>All the World's Articles</h2>
@@ -10,14 +10,15 @@
 <div>
 	<table>
 		<tr>
-		  <th>Title</th>
-		  <th>Author</th>
-		  <th>Body</th>
-		  <th>Create date</th>
-		  <th></th>
+		  <th class = 'ttl'>Title</th>
+		  <th class = 'auth'>Author</th>
+		  <th class = 'body'>Body</th>
+		  <th class = 'dat'>Create date</th>
+		  <th class = 'butt'></th>
 		</tr>
+	</table>
 
-	<div>
+	<table>
 		<% @articles.each do |article| %>
 			<tr>
 				<td><%= truncate(article.title, :length => 16) %></td>
@@ -29,8 +30,7 @@
 				<td><%= link_to image_tag('cancel.png'), article, :title => 'Delete me', confirm: 'Are you sure you wanna remove this article?', method: :delete %></td>
 			</tr>
 		<% end %>
-		</table>
-	</div>
+	</table>
 </div>
 <br />
 
