@@ -3,12 +3,14 @@
 	<h3>...what's 'Articl' in Spanish anyways?</h3>
 <% end %>
 
-<%= link_to image_tag('arrow_left.png') + ' back', articles_path, :title => 'Go back to the articles' %>
-<%= link_to image_tag('comment_edit.png') + ' edit', edit_article_path(@article), :title => 'Edit me' %>
-<%= link_to image_tag('cancel.png') + ' delete', @article, :title => 'Delete me', confirm: 'Are you sure you wanna remove this article?', method: :delete %>
-<%= mail_to 'poop@gmail.com', image_tag('email.png') + ' email', :title => 'e-Mail me', :subject => @article.title, :body => request.url %>
-<h2><%= @article.title %></h2>
+<ul class='links'>
+	<li><%= link_to image_tag('arrow_left.png') + ' back', articles_path, :title => 'Go back to the articles' %></li>
+	<li><%= link_to image_tag('comment_edit.png') + ' edit', edit_article_path(@article), :title => 'Edit me' %></li>
+	<li><%= link_to image_tag('cancel.png') + ' delete', @article, :title => 'Delete me', confirm: 'Are you sure you wanna remove this article?', method: :delete %></li>
+	<li><%= mail_to 'poop@gmail.com', image_tag('email.png') + ' email', :title => 'e-Mail me', :subject => @article.title, :body => request.url %></li>
+</ul>
 
+<h2><%= @article.title %></h2>
 <p>
 	by <%= @article.author %>. <%= pluralize(@article.edit_count, 'revision') %> since <%= @article.create_date.strftime('%b. %d, %Y') %>.
 </p>
