@@ -10,23 +10,23 @@
 <div>
 	<table>
 		<tr>
-		  <th class = 'ttl'>Title</th>
-		  <th class = 'auth'>Author</th>
-		  <th class = 'artcont'>Body</th>
-		  <th class = 'dat'>Create date</th>
-		  <th class = 'butt'></th>
+		  <th class ='ttl'>Title</th>
+		  <th class ='auth'>Author</th>
+		  <th class ='artcont'>Body</th>
+		  <th class ='dat'>Create date</th>
+		  <th class ='butt'></th>
 		</tr>
 	</table>
 </div>
-<div class = 'article_list'>
+<div class ='article_list'>
 	<table>
 		<% @articles.each do |article| %>
-			<tr>
-				<td class = 'ttl'><%= truncate(article.title, :length => 16) %></td>
-				<td class = 'auth'><%= truncate(article.author, :length => 16) %></td>
-				<td class = 'artcont'><%= truncate(article.body, :length => 40) %></td>
-				<td class = 'dat'><%= article.create_date.strftime('%b. %d, %Y') %></td>
-				<td class = 'butt'>
+			<tr class='<%= cycle('dark', 'light') %>'>
+				<td class ='ttl'><%= truncate(article.title, :length => 16) %></td>
+				<td class ='auth'><%= truncate(article.author, :length => 16) %></td>
+				<td class ='artcont'><%= truncate(article.body, :length => 40) %></td>
+				<td class ='dat'><%= article.create_date.strftime('%b. %d, %Y') %></td>
+				<td class ='butt'>
 					<%= link_to image_tag('find.png'), article, :title => 'View me' %>
 					<%= link_to image_tag('comment_edit.png'), edit_article_path(article), :title => 'Edit me' %>
 					<%= link_to image_tag('cancel.png'), article, :title => 'Delete me', confirm: 'Are you sure you wanna remove this article?', method: :delete %>

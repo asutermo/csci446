@@ -2,21 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.artcont {
-	text-align:left;
-	width:27em;
-}
-.buttons {
-	background-color: white;
-	width: 0em;
-}
-.auth, .ttl {
-	text-align:left;
-	width:12em;
-}
-.dat {
-	text-align:left;
-	width: 7em;
+
+.article_list {
+	overflow:auto;
+	heigh:20em;
+	width:65em;
 }
 .heading {
 	margin-left:37%;
@@ -29,8 +19,21 @@ th {
 	background:width;
 	width:5em;
 }
-.article_list {
-	overflow: auto;
-	heigh:20em;
-	width:65em;
+.artcont {
+	text-align:left;
+	width:27em;
+}
+.auth, .ttl {
+	text-align:left;
+	width:12em;
+}
+.dat {
+	text-align:left;
+	width: 7em;
+}
+.light {
+	background:#d9d9d9;
+}
+.dark {
+	background:#b3b3b3;
 }
