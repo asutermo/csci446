@@ -1,3 +1,20 @@
 // Place all the styles related to the Articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.artcont {
+	text-align:left;
+	width:27em;
+}
+.buttons {
+	background-color: white;
+	width: 0em;
+}
+.auth, .ttl {
+	text-align:left;
+	width:12em;
+}
+.dat {
+	text_align:left;
+	width: 8em;
+}
