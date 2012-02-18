@@ -4,9 +4,11 @@
 
 body {
 	margin:25px;
+	width:70em;
 }
 h2,h3 {
 	display:inline;
+	width:68em;
 }
 .heading {
 	margin-left:37%;
@@ -20,7 +22,7 @@ h2,h3 {
 	width:68em;
 }
 .article_new {
-	margin-left:10em;
+	margin-left:20em;
 }	
 th {
 	color:#000;
@@ -59,6 +61,12 @@ th {
 li {
 	display:inline;
 	padding-right:4em;
+}
+ul.errors {
+	list-style-type:circle;
+}
+.error_item {
+	display:list-item;	
 }
 a {
 	color:#60504a;
