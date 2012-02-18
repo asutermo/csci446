@@ -7,19 +7,16 @@
 	<span class ='article_new'><%= link_to image_tag('add.png') + ' create an article', new_article_path, :title => 'creates a new article' %></span>
 </div>
 
-<div>
+		
+<div class ='article_list'>
 	<table>
-		<tr>
+	<tr>
 		  <th class ='ttl'>Title</th>
 		  <th class ='auth'>Author</th>
 		  <th class ='artcont'>Body</th>
 		  <th class ='dat'>Create date</th>
 		  <th class ='butt'></th>
 		</tr>
-	</table>
-</div>
-<div class ='article_list'>
-	<table>
 		<% @articles.each do |article| %>
 			<tr class='<%= cycle('dark', 'light') %>'>
 				<td class ='ttl'><%= truncate(article.title, :length => 16) %></td>
