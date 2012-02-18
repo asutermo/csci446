@@ -2,13 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+	margin:25px;
+}
+h2,h3 {
+	display:inline;
+}
+.heading {
+	margin-left:37%;
+} 
 .article_list {
 	overflow:auto;
 	heigh:20em;
 	width:65em;
-}
-.heading {
-	margin-left:37%;
 }
 .article_new {
 	margin-left:10em;
@@ -40,7 +46,7 @@ th {
 	background:#b3b3b3;
 }
 .actions {
-	margin-left:10em;
+	margin-left:13em;
 }
 .links {
 	margin:0;
@@ -50,12 +56,6 @@ th {
 li {
 	display:inline;
 	padding-right:4em;
-}
-h2 {
-	display:inline;
-}
-body {
-	margin:25px;
 }
 a {
 	color:#60504a;

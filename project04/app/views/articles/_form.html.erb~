@@ -12,17 +12,25 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br />
+    <%= f.label :title %>
     <%= f.text_field :title %>
+  <br />
   </div>
+  
+  
   <div class="field">
-    <%= f.label :author %><br />
+    <%= f.label :author %>
     <%= f.text_field :author %>
+  <br />
   </div>
+  
   <div class="field">
-    <%= f.label :body %><br />
+    <%= f.label :body %>
     <%= f.text_area :body, :size=> '50x25' %>
+    <br />
   </div>
+  
+  <br />
   <div class="actions">
   	<% if @article.new_record? %>
     	<%= f.submit 'Create Article', title: 'Create me' %>

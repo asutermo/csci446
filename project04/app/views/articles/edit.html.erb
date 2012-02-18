@@ -3,6 +3,7 @@
 <% end %>
 <div>
 	<%= link_to image_tag('arrow_left.png') + ' back', @req, :title => 'Go back' %>
+	<br /><br />
 	<h3>Editing "<%= @article.title %>"</h3>
 	<%= render 'form' %>
 </div>
