@@ -21,7 +21,7 @@
 <div class ='article_list'>
 	<table>
 		<% @articles.each do |article| %>
-			<tr class='<%= cycle('odd', 'even') %>'>
+			<tr class='<%= cycle('dark', 'light') %>'>
 				<td class ='ttl'><%= truncate(article.title, :length => 16) %></td>
 				<td class ='auth'><%= truncate(article.author, :length => 16) %></td>
 				<td class ='artcont'><%= truncate(article.body, :length => 40) %></td>
