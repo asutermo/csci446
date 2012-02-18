@@ -39,10 +39,13 @@ th {
 .dark {
 	background:#b3b3b3;
 }
+.actions {
+	margin-left:10em;
+}
 .links {
 	margin:0;
 	padding:0;
-	list-style-type: none;
+	list-style-type:none;
 }
 li {
 	display:inline;
@@ -52,7 +55,7 @@ h2 {
 	display:inline;
 }
 body {
-	margin-left:25px;
+	margin:25px;
 }
 a {
 	color:#60504a;
