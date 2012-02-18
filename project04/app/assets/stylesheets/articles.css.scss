@@ -54,3 +54,19 @@ h2 {
 body {
 	margin-left:25px;
 }
+a {
+	color:#60504a;
+	&:visited {color:purple;}
+	&:hover {
+		color:red;
+		background-color:#60312C;
+	}
+}
+label {
+	width:10em;
+	float:left;
+	text-align:right;
+	margin-right:3em;
+	display:block;
+}
+
