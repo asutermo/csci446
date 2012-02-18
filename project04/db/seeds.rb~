@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Article.delete_all
+
+Article.create( :title=> 'Woo', :body => "test data", :author => "Andrew", :create_date => Time.now, :edit_count => 1)
