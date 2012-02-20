@@ -68,14 +68,6 @@ ul.errors {
 .error_item {
 	display:list-item;	
 }
-a {
-	color:#60504a;
-	&:visited {color:purple;}
-	&:hover {
-		color:red;
-		background-color:#60312C;
-	}
-}
 label {
 	width:10em;
 	float:left;
