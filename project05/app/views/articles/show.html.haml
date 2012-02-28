@@ -1,0 +1,14 @@
+- content_for :subtitle do
+  %h3 ...what's 'Articl' in Spanish anyways?
+%p#notice= notice
+%ul.links
+  %li= link_to image_tag('arrow_left.png') + ' back', articles_path, :title => 'Go back to the articles'
+  %li= link_to image_tag('comment_edit.png') + ' edit', edit_article_path(@article), :title => 'Edit me'
+  %li= link_to image_tag('cancel.png') + ' delete', @article, :title => 'Delete me', confirm: 'Are you sure you wanna remove this article?', method: :delete
+  %li= mail_to 'poop@gmail.com', image_tag('email.png') + ' email', :title => 'e-Mail me', :subject => @article.title, :body => request.url
+%br/
+%h2= @article.title
+%p
+  by #{@article.author}. #{pluralize(@article.edit_count, 'revision')} since #{@article.create_date.strftime('%b. %d, %Y')}.
+%p
+  = simple_format @article.body

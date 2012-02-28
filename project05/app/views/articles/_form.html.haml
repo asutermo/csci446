@@ -1,0 +1,30 @@
+= form_for(@article) do |f|
+  - if @article.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@article.errors.count, "error")
+        prohibited this article from being saved:
+      %ul.errors
+        - @article.errors.full_messages.each do |msg|
+          %li.error_item= msg
+  .field
+    = f.label :title
+    = f.text_field :title
+    %br/
+    %br/
+  .field
+    = f.label :author
+    = f.text_field :author
+    %br/
+    %br/
+  .field
+    = f.label :body
+    = f.text_area :body, :size=> '50x25'
+    %br/
+    %br/
+  %br/
+  .actions
+    - if @article.new_record?
+      = f.submit 'Create Article', title: 'Create me'
+    - else
+      = f.submit 'Save Revision', title: 'Save me'

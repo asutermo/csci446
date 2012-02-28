@@ -1,0 +1,29 @@
+- content_for :subtitle do
+  %h3 ...with a name .com hipsters love!
+%div
+  %h2 All the World's Articles
+  %span.article_new= link_to image_tag('add.png') + ' create an article', new_article_path, :title => 'creates a new article'
+%br/
+.table_header
+  %table
+    %tr
+      %th.ttl Title
+      %th.auth Author
+      %th.artcont Body
+      %th.dat Create date
+      %th.butt
+.article_list
+  %table
+    - @articles.each do |article|
+      <tr class='#{cycle('dark', 'light')}'>
+      %td.ttl= truncate(article.title, :length => 16)
+      %td.auth= truncate(article.author, :length => 16)
+      %td.artcont= truncate(article.body, :length => 40)
+      %td.dat= article.create_date.strftime('%b. %d, %Y')
+      %td.butt
+        = link_to image_tag('find.png'), article, :title => 'View me'
+        = link_to image_tag('comment_edit.png'), edit_article_path(article), :title => 'Edit me'
+        = link_to image_tag('cancel.png'), article, :title => 'Delete me', confirm: 'Are you sure you wanna remove this article?', method: :delete
+%br/
+= pluralize(@articles.count, "article")
+\.
