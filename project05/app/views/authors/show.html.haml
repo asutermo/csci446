@@ -1,0 +1,13 @@
+%p#notice= notice
+%p
+  %b Authorname:
+  = @author.authorname
+%p
+  %b Image url:
+  = @author.image_url
+%p
+  %b Image type:
+  = @author.image_type
+= link_to 'Edit', edit_author_path(@author)
+|
+\#{link_to 'Back', authors_path}
