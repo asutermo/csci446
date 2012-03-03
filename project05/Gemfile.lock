@@ -121,6 +121,7 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
   erb2haml
+  haml
   jquery-rails
   json
   paperclip

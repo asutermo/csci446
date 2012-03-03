@@ -3,7 +3,6 @@ class AuthorsController < ApplicationController
   # GET /authors.json
   def index
     @authors = Author.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @authors }
