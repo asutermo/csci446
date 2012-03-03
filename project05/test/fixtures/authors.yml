@@ -2,10 +2,6 @@
 
 one:
   authorname: MyString
-  image_url: MyString
-  image_type: MyString
 
 two:
   authorname: MyString
-  image_url: MyString
-  image_type: MyString

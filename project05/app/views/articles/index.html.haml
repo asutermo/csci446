@@ -19,7 +19,7 @@
     - @articles.each do |article|
       <tr class='#{cycle('dark', 'light')}'>
       %td.ttl= truncate(article.title, :length => 16)
-      %td.auth= truncate(article.author, :length => 16)
+      %td.auth= truncate(article.author.authorname, :length => 16)
       %td.artcont= truncate(article.body, :length => 40)
       %td.dat= article.create_date.strftime('%b. %d, %Y')
       %td.butt

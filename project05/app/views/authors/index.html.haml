@@ -3,11 +3,9 @@
   %table
     %tr
       %th Author name
-      %th Image url
     - @authors.each do |author|
       %tr
         %td= author.authorname
-        %td= author.image_url
         %td= link_to 'Show', author
         %td= link_to 'Edit', edit_author_path(author)
         %td= link_to 'Destroy', author, confirm: 'Are you sure?', method: :delete

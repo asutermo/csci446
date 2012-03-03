@@ -4,7 +4,7 @@
   = @author.authorname
 %p
   %b Image url:
-  = image_tag @author.image_url
+  = image_tag @author.photo.url
 %p
   %b Articles:
   - for article in @author.articles

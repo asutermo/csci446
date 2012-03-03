@@ -9,6 +9,6 @@
 %br/
 %h2= @article.title
 %p
-  by #{@article.author}. #{pluralize(@article.edit_count, 'revision')} since #{@article.create_date.strftime('%b. %d, %Y')}.
+  by #{@article.author.authorname}. #{pluralize(@article.edit_count, 'revision')} since #{@article.create_date.strftime('%b. %d, %Y')}.
 %p
   = simple_format @article.body
