@@ -13,8 +13,8 @@
     %br/
     %br/
   .field
-    = f.label :author
-    = f.text_field :author
+    = f.label :author_id
+    = collection_select(:article, :author_id, @authors, :id, :name, {:prompt => 'Select Author'})
     %br/
     %br/
   .field
