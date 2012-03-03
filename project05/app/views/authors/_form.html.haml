@@ -8,16 +8,12 @@
         - @author.errors.full_messages.each do |msg|
           %li= msg
   .field
-    = f.label :authorname
+    = f.label "Author name"
     %br/
     = f.text_field :authorname
   .field
-    = f.label :image_url
+    = f.label "Profile pic"
     %br/
-    = f.text_field :image_url
-  .field
-    = f.label :image_type
-    %br/
-    = f.text_field :image_type
+    = f.file_field :image_url
   .actions
     = f.submit

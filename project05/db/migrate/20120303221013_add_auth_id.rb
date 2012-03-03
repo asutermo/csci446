@@ -4,6 +4,6 @@ class AddAuthId < ActiveRecord::Migration
   end
 
   def down
-  	add_column :articles, :auth_id, :integer
+  	add_column :articles, :author, :string
   end
 end
