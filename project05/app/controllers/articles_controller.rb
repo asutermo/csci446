@@ -24,6 +24,7 @@ class ArticlesController < ApplicationController
   # GET /articles/new.json
   def new
     @article = Article.new
+    @authors = Author.all
 
     respond_to do |format|
       format.html # new.html.erb

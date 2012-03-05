@@ -14,7 +14,7 @@
     %br/
   .field
     = f.label :author_id
-    = collection_select(:article, :author_id, @authors, :id, :authorname, {:prompt => 'Select Author'})
+    = collection_select(:article, :author_id, @authors, :id, :authorname, {:prompt => 'Author'})
     %br/
     %br/
   .field

@@ -9,7 +9,10 @@
 Article.delete_all
 Author.delete_all
 
+
 Author.create(:id=>1, :authorname => "ASM")
-(1..100).each do |i|
+Author.create(:id=>2, :authorname => "TEST")
+Author.create(:id=>3, :authorname => "Andrew Suter-Morris")
+(1..150).each do |i|
 	Article.create( :title=> 'Woo', :body => "test data", :author_id => 1, :create_date => Time.now, :edit_count => 1)
 end
