@@ -13,11 +13,6 @@ h2,h3 {
 .heading {
 	margin-left:37%;
 } 
-.article_list {
-	width:68em;
-	height:25em;
-	overflow:auto;
-}
 .table_header {
 	width:68em;
 }
@@ -64,6 +59,22 @@ li {
 }
 ul.errors {
 	list-style-type:circle;
+}
+.pagi {
+	padding-top:2em;
+	margin-left:30%;
+}
+.pagi a {
+	padding:2px 2px 2px 2px;
+	margin:2px;
+	color:red;
+}
+.pagi a:visited {
+	color:#DC143C;
+}
+.pagi a:hover, .pagi a:active {
+	color:white;
+	text-color:black;	
 }
 .error_item {
 	display:list-item;	
