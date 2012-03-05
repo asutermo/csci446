@@ -1,7 +1,10 @@
-Sat, 18 Feb 2012 15:54:26 -0700
-doc/README_FOR_APP	Tue, 14 Feb 2012 11:20:55 -0700
-app/models/article.rb	Tue, 14 Feb 2012 12:03:03 -0700
-app/helpers/articles_helper.rb	Tue, 14 Feb 2012 11:25:39 -0700
-app/helpers/application_helper.rb	Tue, 14 Feb 2012 11:20:55 -0700
-app/controllers/articles_controller.rb	Thu, 16 Feb 2012 16:49:20 -0700
-app/controllers/application_controller.rb	Tue, 14 Feb 2012 11:20:55 -0700
+Sun, 04 Mar 2012 21:36:11 -0700
+doc/README_FOR_APP	Thu, 23 Feb 2012 11:52:29 -0700
+app/models/article.rb	Sun, 04 Mar 2012 17:47:25 -0700
+app/models/author.rb	Sun, 04 Mar 2012 17:36:14 -0700
+app/helpers/articles_helper.rb	Thu, 23 Feb 2012 11:52:28 -0700
+app/helpers/application_helper.rb	Thu, 23 Feb 2012 11:52:28 -0700
+app/helpers/authors_helper.rb	Sat, 03 Mar 2012 15:02:47 -0700
+app/controllers/articles_controller.rb	Sun, 04 Mar 2012 17:03:04 -0700
+app/controllers/application_controller.rb	Thu, 23 Feb 2012 11:52:28 -0700
+app/controllers/authors_controller.rb	Sat, 03 Mar 2012 15:24:40 -0700
