@@ -5,12 +5,6 @@ class ArticlesControllerTest < ActionController::TestCase
     @article = articles(:one)
   end
 
-  test "should get index" do
-    get :index
-    assert_response :success
-    assert_not_nil assigns(:articles)
-  end
-
   test "should get new" do
     get :new
     assert_response :success
@@ -22,11 +16,6 @@ class ArticlesControllerTest < ActionController::TestCase
     end
 
     assert_redirected_to article_path(assigns(:article))
-  end
-
-  test "should show article" do
-    get :show, id: @article
-    assert_response :success
   end
 
   test "should get edit" do
