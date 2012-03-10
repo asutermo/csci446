@@ -1,0 +1,81 @@
+Andrew Suter-Morris
+
+1. POST sends data to server with data in the request body. PUT loads an object on the server.
+
+2. The URL is relative.
+
+3. Absolute URL is full URL, relative URL is the part of the absolute URL relative to the index page so www.google.com/images/new?request_type=PUT is absolute whereas /images/new?request_type=PUT is relative to www.google.com.
+
+4. Clicking on the link would generate a GET request. method is an invalid attribute.
+
+5. The query string is "request_type=PUT"
+
+6. The title attribute enhances accessibility as does making the link appear clickable.
+
+7. The database functions as a model that stores and persists information. The web browser serves as a way to interpret the views. 
+
+8. It usually would contain a response body. It does not have a code 304 (Not Modified) or 204 (No Content) status code.
+
+9.
+class Troll
+	attr_accessor :ugliness, :smelliness, :strength
+	@grunt
+
+	def initialize(grunt = "UNGAH") 
+		@grunt = grunt
+		@ugliness, @smelliness, @strength = nil
+	end
+
+	def speak()
+		puts @grunt * 42
+	end
+
+	def reverse()
+		puts @grunt.reverse
+	end	
+
+	def self.propogate()
+		Troll.new("eegah")
+	end
+end
+
+10.It is missing a fight method. respond_to? returns true or false if a fight method exists for fred.
+
+11. respond_to is polymorphic because it can be used with any class. It can be overriden as well to meld with any class. It also demonstrates inheritance as the super class has respond_to.
+
+12. A method ending in a question mark results in a boolean true or false value being returned.
+
+13. Method with bang alters the calling object in place (dangerous method). Without the bang, a copy of the original with the changes is returned.
+
+14. Ruby uses Duck Typing. It essentially says that if it sounds like a duck, acts like a duck, looks like a duck - it's a duck.
+
+15. It yields an array of strings.
+
+16. Yes, they both print the same thing.
+
+17. Ruby returns the last line in functions. It does not need an explicit return statement.
+
+18. You can bind to before_destroy, before_validation, before_create, before_save. 
+19. 
+
+method	action	CRUD
+get     index   read
+get     new     read
+post    create  create
+get     edit    read
+put     update  update
+delete  delete  delete
+
+20. Rails simulates these because they are tools that aren't completely specified in HTML and web apps. They are inconsistently used, and are not supported in HTML forms. Rails adds a method attribute to the requests and decides how to route the put and delete.
+
+21. Production is the product that is accessible by everybody or intended to be live, development is used for exactly that. It's not ready to be deployed to everyone yet. Development reloads on every request, whereas production is performance based.
+
+22. Controllers should generally be plural due to convention and it's the RESTful way. Controllers make use of the tables where it is likely they have more than one entry. If there's no model, or when there's only going to be one record in the database, GeocodingController (singular) would be used.
+
+
+23. A helper method is used to keep views DRY and extract the logic from views.
+
+
+24. There needs to be a foreign key field in the database of the belongs_to side, but Rails handles the key assignment using the has_many and belongs_to associations. If there is an authors table, and an articles table, the articles table should have an author_id column.
+
+25. They are okay since they work. However, to make this work better, eager loading would improve performance so there aren't lots of unecessary SQL queries generated.
