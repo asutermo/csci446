@@ -6,4 +6,9 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
+  .h_login
+    %div
+    .h_name
+    %h1
+      = link_to 'Gamez', games_path
     = yield
