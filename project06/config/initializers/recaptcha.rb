@@ -1,5 +1,4 @@
 Recaptcha.configure do |config|
-  config.public_key  = '6Lcfi88SAAAAAFVQnk4YecXn0AjZJvwUEiqO_0xr'
-  config.private_key = '6Lcfi88SAAAAACVV_iWRrRR9rP4aNlXtLE9pbxzox'
-  config.proxy = 'http://myrpoxy.com.au:8080'
+  config.public_key  = '6Lcrks8SAAAAAEzkHtnzPpd1H9thsC_W4yzbkIW_'
+  config.private_key = '6Lcrks8SAAAAALVl4DMnhIM-36zZwpkXoqfTM0pc'
 end

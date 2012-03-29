@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+	attr_accessor:recaptcha
 	acts_as_authentic
 	has_many :games, :limit => 10, :dependent => :destroy
 	validates :email, :username, :uniqueness => true
