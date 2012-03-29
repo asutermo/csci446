@@ -8,13 +8,8 @@
   %body
   .h_login
     %div
-      - if current_user
-        Logged in as
-        = current_user.username
-        = link_to "Logout", :logout
-      - else
-        = link_to "Register", new_user_path
-        = link_to "Login", :login
+      = link_to "Register", new_user_path
+      = link_to "Login", :login
   .h_name
   %h1
     = link_to 'Gamez', games_path
