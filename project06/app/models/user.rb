@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+	acts_as_authentic
 	has_many :games, :limit => 10, :dependent => :destroy
 	validates :email, :user_name, :uniqueness => true
 	has_attached_file :photo, :styles => {:small => '200x200'}
