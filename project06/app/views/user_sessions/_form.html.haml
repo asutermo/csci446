@@ -1,3 +1,5 @@
+%h3 First time here? 
+= link_to 'Register?', new_user_path
 = form_for(@user_session) do |f|
   - if @user_session.errors.any?
     #error_explanation
