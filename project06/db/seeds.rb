@@ -9,7 +9,7 @@ Game.delete_all
 User.delete_all
 
 for i in (1..50)
-	User.create(:f_name => 'woot', :l_name => 'wooterson', :email => 'ww#{i}@woot.com', :user_name => 'wootuser#{i}', :password => 'password')
+	User.create(:f_name => 'woot', :l_name => 'wooterson', :email => 'ww#{i}@woot.com', :user_name => 'wootuser#{i}', :crypted_password => 'password')
 end
 
 for i in (1..50)

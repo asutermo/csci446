@@ -9,23 +9,24 @@
           %li= msg
   .field
     = f.label :user_name
-    %br/
     = f.text_field :user_name
   .field
-    = f.label :password
-    %br/
+    = f.label "Pass"
     = f.text_field :password
   .field
-    = f.label :f_name
-    %br/
+    = f.label "Confirm Pass"
+    = f.text_field :password_confirmation
+  .field
+    = f.label "First Name"
     = f.text_field :f_name
   .field
-    = f.label :l_name
-    %br/
+    = f.label "Last Name"
     = f.text_field :l_name
   .field
     = f.label :email
-    %br/
     = f.text_field :email
+  .field
+    = f.label "Profile Picture"
+    = f.file_field :photo
   .actions
     = f.submit
