@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120329025903) do
+ActiveRecord::Schema.define(:version => 20120329032632) do
 
   create_table "games", :force => true do |t|
     t.string   "title"
@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(:version => 20120329025903) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "user_name"
     t.string   "f_name"
     t.string   "l_name"
     t.string   "email"
@@ -39,6 +38,7 @@ ActiveRecord::Schema.define(:version => 20120329025903) do
     t.string   "persistence_token"
     t.string   "crypted_password"
     t.string   "password_salt"
+    t.string   "username"
   end
 
 end
