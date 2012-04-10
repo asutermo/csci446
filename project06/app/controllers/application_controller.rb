@@ -25,7 +25,7 @@ class ApplicationController < ActionController::Base
     flash[:alert] = "Access denied"
     if current_user.is_member?
       redirect_to member_root_url
-    
+    end
     if current_user.is_admin?
       redirect_to admin_root_url
     else
