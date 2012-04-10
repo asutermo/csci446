@@ -30,20 +30,20 @@ module GamesHelper
 	end
 
 	def g_rating(game)
-		unless game.rating.blank?
-			game.rating
+		if game.rating.blank?
+			"Unrated"	
 		else
-			"Unrated"
+			game.rating
 		end
 	end
 
 	def percent
 		total_games = Game.count(:all, :conditions => {:user_id => current_user.id})
-		unless total_games.eql? 0
+		if total_games.eql? 0
+			number_to_percentage(0, :precision => 0)
+		else
 			non_rated_games = Game.count(:all, :conditions => {:user_id => current_user.id, :rating => nil})
 			number_to_percentage(((1-(Float(non_rated_games)/total_games))*100), :precision => 0)
-		else
-			number_to_percentage(0, :precision => 0)
 		end
 	end
 end
