@@ -1,8 +1,8 @@
-class UsersController < ApplicationController
+class Admin::UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @users = User.paginate :page => params[:page], :order => 'last_name asc', :per_page => 10
 
     respond_to do |format|
       format.html # index.html.erb
@@ -43,7 +43,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     respond_to do |format|
       if verify_recaptcha(@user) and @user.save
-        format.html { redirect_to @user, notice: 'User was successfully registered.' }
+        format.html { redirect_to admin_users_path, notice: 'User was successfully registered.' }
         format.json { render json: @user, status: :created, location: @user }
       else
         format.html { render action: "new" }
@@ -59,7 +59,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to admin_users_path, notice: 'User was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -75,7 +75,7 @@ class UsersController < ApplicationController
     @user.destroy
 
     respond_to do |format|
-      format.html { redirect_to users_url }
+      format.html { redirect_to admin_users_path }
       format.json { head :no_content }
     end
   end
