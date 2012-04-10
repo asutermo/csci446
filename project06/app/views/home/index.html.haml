@@ -1,0 +1,10 @@
+%p#notice= notice
+%p#alert= alert
+%p
+  = will_paginate @games
+%table
+  %tr
+    %th.title Title
+  - @games.each do |game|
+    %tr
+      %td.title= game_title(game)
