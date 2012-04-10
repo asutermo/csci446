@@ -4,14 +4,12 @@ class Member::UsersController < Member::MemberController
     @user = current_user
   end
 
-  # PUT /users/1
-  # PUT /users/1.json
   def update
     @user = User.find(params[:id])
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html { redirect_to member_root_path, :notice => 'Successfully updated profile' }
+        format.html { redirect_to member_root_path, :notice => 'Successfully updated user' }
         format.json { head :no_content }
       else
         format.html { render :action => "edit" }
@@ -19,9 +17,6 @@ class Member::UsersController < Member::MemberController
       end
     end
   end
-
-  # DELETE /users/1
-  # DELETE /users/1.json
   def destroy
     @user = User.find(params[:id])
     @user.destroy

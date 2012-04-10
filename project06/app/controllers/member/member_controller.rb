@@ -6,9 +6,8 @@ class Member::MemberController < ApplicationController
 
   def index
     @games = Game.all
-
     respond_to do |format|
-      format.html # index.html.erb
+      format.html
       format.json { render :json => @games }
     end
   end

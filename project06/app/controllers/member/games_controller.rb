@@ -25,7 +25,7 @@ class Member::GamesController < Member::MemberController
   def edit
     @game = Game.find(params[:id])
     unless @game.user.eql? current_user
-      flash[:alert] = "Hey bro, you can't edit games that aren't yours!"
+      flash[:alert] = "No editing"
       redirect_to member_root_url
     end
   end
@@ -38,7 +38,7 @@ class Member::GamesController < Member::MemberController
 
     respond_to do |format|
       if @game.save
-        format.html { redirect_to member_root_url, :notice => "Successfully added #{@game.title}" }
+        format.html { redirect_to member_root_url, :notice => "Successfully added game" }
         format.json { render :json => @game, :status => :created, :location => @game }
       else
         format.html { render :action => "new" }
@@ -54,7 +54,7 @@ class Member::GamesController < Member::MemberController
 
     respond_to do |format|
       if @game.update_attributes(params[:game])
-        format.html { redirect_to member_root_url, :notice => "Successfully updated #{@game.title}" }
+        format.html { redirect_to member_root_url, :notice => "Successfully updated game" }
         format.json { head :no_content }
       else
         format.html { render :action => "edit" }
