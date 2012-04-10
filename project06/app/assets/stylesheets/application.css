@@ -15,11 +15,10 @@
 }
 
 a {
-	color:#494949;
- 	&:visited {color: #666}
+	color:red;
+ 	&:visited {color: #DC143C}
  	&:hover {
     color: black;
-	 background-color: #DBDBDB;
 	}
 }
 
