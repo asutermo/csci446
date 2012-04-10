@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
   end
   
   def to_s
-    self.f_name + ' ' + self.l_name
+    self.full_name
   end
   
   def role_symbols
