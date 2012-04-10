@@ -1,6 +1,4 @@
 class Admin::GamesController < Admin::AdminController
-  # GET /games
-  # GET /games.json
   def index
      @games = Game.paginate(:page => params[:page], :order => 'created_at desc', :per_page => 10)
     respond_to do |format|
@@ -9,8 +7,6 @@ class Admin::GamesController < Admin::AdminController
     end
   end
 
-  # GET /games/1
-  # GET /games/1.json
   def show
     @game = Game.find(params[:id])
 
@@ -20,8 +16,6 @@ class Admin::GamesController < Admin::AdminController
     end
   end
 
-  # GET /games/new
-  # GET /games/new.json
   def new
     @game = Game.new
 
@@ -31,20 +25,17 @@ class Admin::GamesController < Admin::AdminController
     end
   end
 
-  # GET /games/1/edit
   def edit
     @game = Game.find(params[:id])
   end
 
-  # POST /games
-  # POST /games.json
   def create
     @game = Game.new(params[:game])
     @game.user_id = current_user.id
 
     respond_to do |format|
       if @game.save
-        format.html { redirect_to admin_root_url, :notice => "Successfully added #{@game.title}." }
+        format.html { redirect_to admin_root_url, :notice => "Successfully added game" }
         format.json { render :json => @game, :status => :created, :location => @game }
       else
         format.html { render :action => "new" }
@@ -60,7 +51,7 @@ class Admin::GamesController < Admin::AdminController
 
     respond_to do |format|
       if @game.update_attributes(params[:game])
-        format.html { redirect_to admin_root_url, :notice => "Successfully updated #{@game.title}." }
+        format.html { redirect_to admin_root_url, :notice => "Successfully updated game" }
         format.json { head :no_content }
       else
         format.html { render :action => "edit" }

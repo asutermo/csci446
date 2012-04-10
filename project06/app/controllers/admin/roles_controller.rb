@@ -1,6 +1,4 @@
 class Admin::RolesController < Admin::AdminController
-  # GET /roles
-  # GET /roles.json
   def index
     @roles = Role.paginate(:page => params[:page], :order => 'name asc', :per_page => 10)
     
@@ -44,7 +42,7 @@ class Admin::RolesController < Admin::AdminController
 
     respond_to do |format|
       if @role.save
-        format.html { redirect_to admin_roles_path, :notice => 'Role was successfully created.' }
+        format.html { redirect_to admin_roles_path, :notice => 'Created role' }
         format.json { render :json => @role, :status => :created, :location => @role }
       else
         format.html { render :action => "new" }
@@ -60,7 +58,7 @@ class Admin::RolesController < Admin::AdminController
 
     respond_to do |format|
       if @role.update_attributes(params[:role])
-        format.html { redirect_to admin_roles_path, :notice => 'Role was successfully updated.' }
+        format.html { redirect_to admin_roles_path, :notice => 'Updated role' }
         format.json { head :no_content }
       else
         format.html { render :action => "edit" }

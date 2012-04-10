@@ -5,7 +5,7 @@ class Admin::UsersController < Admin::AdminController
     @users = User.paginate :page => params[:page], :order => 'l_name asc', :per_page => 10
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html 
       format.json { render :json => @users }
     end
   end
@@ -44,7 +44,7 @@ class Admin::UsersController < Admin::AdminController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to admin_users_path, :notice => 'Successfully created new user' }
+        format.html { redirect_to admin_users_path, :notice => 'Successfully created user' }
         format.json { render :json => @user, :status => :created, :location => @user }
       else
         format.html { render :action => "new" }
@@ -60,7 +60,7 @@ class Admin::UsersController < Admin::AdminController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html { redirect_to admin_users_path, :notice => 'Successfully updated profile' }
+        format.html { redirect_to admin_users_path, :notice => 'Successfully updated' }
         format.json { head :no_content }
       else
         format.html { render :action => "edit" }
