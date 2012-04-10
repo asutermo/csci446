@@ -42,7 +42,7 @@ class Admin::UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     respond_to do |format|
-      if verify_recaptcha(@user) and @user.save
+      if @user.save
         format.html { redirect_to admin_users_path, notice: 'User was successfully registered.' }
         format.json { render json: @user, status: :created, location: @user }
       else
