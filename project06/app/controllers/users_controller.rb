@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     @user.role_id = Role.find_or_create_by_name("member").id
     respond_to do |format|
       if verify_recaptcha(@user) && @user.save 
-        format.html { redirect_to root_url, :notice => 'Registration successful' }
+        format.html { redirect_to root_url, :notice => 'Succeeded registering' }
         format.json { render :json => @user, :status => :created, :location => @user }
       else
         format.html { render :action => "new" }
