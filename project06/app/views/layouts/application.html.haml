@@ -6,7 +6,7 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
 
-  .nav_bar
+  .topbar
     - if current_user.nil?
       = link_to "Login", :login
       = link_to "Register", :register

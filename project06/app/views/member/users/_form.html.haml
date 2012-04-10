@@ -8,13 +8,13 @@
         - @user.errors.full_messages.each do |msg|
           %li= msg
   .field
-    = f.label :username
+    = f.label "User name"
     = f.text_field :username, :disabled => true
   .field
-    = f.label :password
+    = f.label "Password"
     = f.password_field :password
   .field
-    = f.label :password_confirmation
+    = f.label "Confirm password"
     = f.password_field :password_confirmation
   .field
     = f.label "First name"
@@ -23,11 +23,11 @@
     = f.label "Last name"
     = f.text_field :l_name
   .field
-    = f.label :email
+    = f.label "Email"
     = f.text_field :email
   .field
-    = f.label :photo
+    = f.label "Profile pic"
     = f.file_field :photo
     = image_tag @user.photo.url
   .actions
-    = f.submit 'Save Changes'
+    = f.submit 'Save'
