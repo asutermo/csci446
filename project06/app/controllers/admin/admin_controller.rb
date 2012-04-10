@@ -1,5 +1,5 @@
 class Admin::AdminController < ApplicationController
-  before_filter :require_user
+  before_filter :req_user
   filter_access_to :all
   layout 'admin'
 end	
