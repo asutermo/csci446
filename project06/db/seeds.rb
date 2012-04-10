@@ -7,6 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Game.delete_all
 User.delete_all
+Role.delete_all
 
 Role.create!(:name => 'admin', :descript => 'A system administrator. Full access to all features.')
 Role.create!(:name => 'member', :descript => 'A member of the site')
