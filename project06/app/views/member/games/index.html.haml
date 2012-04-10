@@ -18,4 +18,4 @@
       %td.date= game_date(game) 
 %br/
 %p
-  = "I\'ve created #{pluralize(@games.count, 'game')}, #{rating_percent} of which are rated."
+  = "Created #{pluralize(@games.count, 'game')}, #{percent} rated."

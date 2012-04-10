@@ -1,8 +1,9 @@
 module GamesHelper
-	def game_title(game)
+	def g_title(game)
 		if current_user.nil?
 			game.title
-		elsif current_user.is_member?
+		end
+		if current_user.is_member?
 			if game.created_by? current_user
 				link_to game.title, edit_member_game_path(game)
 			else
@@ -13,10 +14,11 @@ module GamesHelper
 		end
 	end
 
-	def game_date(game)
+	def g_date(game)
 		if current_user.nil? or (!game.created_by? current_user and !current_user.is_admin?)
         	game.created_at.strftime("%b. %d, %Y") + ' by ' + game.user.full_name
-		elsif game.created_by? current_user
+    	end
+		if game.created_by? current_user
 			if current_user.is_member?
         		game.created_at.strftime("%b. %d, %Y") + ' by me'
         	else
@@ -27,7 +29,7 @@ module GamesHelper
         end
 	end
 
-	def game_rating(game)
+	def g_rating(game)
 		unless game.rating.blank?
 			game.rating
 		else
@@ -35,7 +37,7 @@ module GamesHelper
 		end
 	end
 
-	def rating_percent
+	def percent
 		total_games = Game.count(:all, :conditions => {:user_id => current_user.id})
 		unless total_games.eql? 0
 			non_rated_games = Game.count(:all, :conditions => {:user_id => current_user.id, :rating => nil})

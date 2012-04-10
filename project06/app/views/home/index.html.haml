@@ -8,4 +8,6 @@
     %th.date Date
   - @games.each do |game|
     %tr
-      %td.title= game_title(game)
+      %td.title= g_title(game)
+      %td.rating= g_rating(game)
+      %td.date= g_date(game)
