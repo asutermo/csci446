@@ -3,7 +3,7 @@
 %h2
   = "#{@games.count} Games"
 = link_to 'Add a game', new_admin_game_path
-%p
+%br
   = will_paginate @games
 %game_list
   %tr
