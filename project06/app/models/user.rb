@@ -9,8 +9,8 @@ class User < ActiveRecord::Base
   validates :password, :confirmation => true, :presence => true, :on => :create
   validates_length_of :password, :minimum => 6, :on => :create
 	validates_length_of :username, :minimum => 6
-  has_attached_file :photo, :styles => {:small => '200x200'}
   validates_attachment_presence :photo
+
   def full_name
     self.f_name.capitalize + " " + self.l_name.capitalize
   end

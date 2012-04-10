@@ -9,12 +9,12 @@ Game.delete_all
 User.delete_all
 Role.delete_all
 
-Role.create!(:name => 'admin', :descript => 'A system administrator. Full access to all features.')
-Role.create!(:name => 'member', :descript => 'A member of the site')
+Role.create!(:name => 'admin', :descript => 'Full access')
+Role.create!(:name => 'member', :descript => 'Basic access')
 
-User.create!(:username => 'administrator', :password => 'password', :password_confirmation => 'password', :f_name => 'Adolf', :l_name => 'Coors', :email => 'admin@gamez.com', :role_id => Role.find_or_create_by_name("admin").id)
-User.create!(:username => 'member', :password => 'password', :password_confirmation => 'password', :f_name => 'Matz', :l_name => 'Matsumoto', :email => 'member@gamez.com', :role_id => Role.find_or_create_by_name("member").id)
+User.create!(:username => 'administrator', :password => 'password', :password_confirmation => 'password', :f_name => 'Andrew', :l_name => 'Morris', :email => 'a121212@gmail.com', :role_id => Role.find_or_create_by_name("admin").id)
+User.create!(:username => 'member', :password => 'password', :password_confirmation => 'password', :f_name => 'Andrew', :l_name => 'Suter', :email => 'a131313@gmail.com', :role_id => Role.find_or_create_by_name("member").id)
 
 (1..30).each do |i|
-	Game.create!(:title => 'Wisest Wizard', :rating => 'meh', :user_id => 1)
+	Game.create!(:title => 'Generic Mega Game Sequel', :rating => 'Awesome', :user_id => 1)
 end
