@@ -5,7 +5,6 @@
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
-
   .topbar
     - if current_user.nil?
       = link_to "Login", :login
@@ -14,7 +13,6 @@
       = render :partial => 'layouts/auserbar'
     - else current_user.is_member?
       = render :partial => 'layouts/muserbar'
-
   %h1
     = link_to "Gamez", root_url
   

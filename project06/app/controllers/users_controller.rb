@@ -1,18 +1,12 @@
 class UsersController < ApplicationController
-  #filter_resource_access
-  # GET /users/new
-  # GET /users/new.json
   def new
     @user = User.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html
       format.json { render :json => @user }
     end
   end
-
-  # POST /users
-  # POST /users.json
   def create
     @user = User.new(params[:user])
     @user.role_id = Role.find_or_create_by_name("member").id
