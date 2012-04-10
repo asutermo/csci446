@@ -8,8 +8,6 @@ class Admin::RolesController < Admin::AdminController
     end
   end
 
-  # GET /roles/1
-  # GET /roles/1.json
   def show
     @role = Role.find(params[:id])
 
@@ -19,8 +17,6 @@ class Admin::RolesController < Admin::AdminController
     end
   end
 
-  # GET /roles/new
-  # GET /roles/new.json
   def new
     @role = Role.new
 
@@ -30,13 +26,10 @@ class Admin::RolesController < Admin::AdminController
     end
   end
 
-  # GET /roles/1/edit
   def edit
     @role = Role.find(params[:id])
   end
 
-  # POST /roles
-  # POST /roles.json
   def create
     @role = Role.new(params[:role])
 
@@ -51,8 +44,6 @@ class Admin::RolesController < Admin::AdminController
     end
   end
 
-  # PUT /roles/1
-  # PUT /roles/1.json
   def update
     @role = Role.find(params[:id])
 
@@ -67,8 +58,6 @@ class Admin::RolesController < Admin::AdminController
     end
   end
 
-  # DELETE /roles/1
-  # DELETE /roles/1.json
   def destroy
     @role = Role.find(params[:id])
     @role.destroy
