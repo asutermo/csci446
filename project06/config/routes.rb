@@ -2,16 +2,22 @@ Gamez::Application.routes.draw do
   resources :user_sessions
   resources :users
   resources :games
+  resources :roles
   match 'login' => 'user_sessions#new', :as => :login
   match 'logout' => 'user_sessions#destroy', :as => :logout
+  match 'register' => 'users#new', :as => :register
+  root :to => 'home#index'
   namespace :member do
-    resources :users
+    resources :users, :only => [:edit, :update]
     resources :games
+    match 'me' => 'users#edit', :as => :me
+    root :to => 'games#index'
   end
 
   namespace :admin do
-    resources :users
-    resources :games
+    resources :users, :games, :roles
+    match 'me' => 'users#edit'
+    root :to => 'games#index'
   end
 
   
@@ -64,7 +70,6 @@ Gamez::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'games#index'
 
   # See how all your routes lay out with "rake routes"
 
