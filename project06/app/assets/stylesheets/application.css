@@ -1,4 +1,4 @@
-.nav_bar{
+.topbar{
   text-align: right;
   ul {
   	list-style-type: none;
@@ -6,7 +6,7 @@
   }
 }
 
-.admin_nav_bar{
+.atopbar{
   margin-left: 20em;
   margin-right: 20em;
   border-width: 1px;

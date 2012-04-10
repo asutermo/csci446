@@ -11,14 +11,14 @@
       = link_to "Login", :login
       = link_to "Register", :register
     - elsif current_user.is_admin?
-      = render :partial => 'layouts/admin_user_bar'
+      = render :partial => 'layouts/auserbar'
     - else current_user.is_member?
-      = render :partial => 'layouts/member_user_bar'
+      = render :partial => 'layouts/muserbar'
 
   %h1
     = link_to "Gamez", root_url
   
   - if !current_user.nil? and current_user.is_admin?
-    = render :partial => 'layouts/admin_nav_bar'
+    = render :partial => 'layouts/auserbar'
   %body
     = yield
