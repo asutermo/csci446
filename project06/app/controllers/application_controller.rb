@@ -1,25 +1,19 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  before_filter { |u| Authorization.current_user = u.current_user}
+  before_filter { |c| Authorization.current_user = c.current_user }
+  #filter_parameter_logging "password"
   helper_method :current_user, :current_user_session
+  #filter_resource_access
+
   protected
-  def current_user_session
-  	return @current_user_session if defined? @current_user_session
-  	@current_user_session = UserSession.find
+
+  def home_url_for(user)
+    return root_url if user.nil?
+    user.is_member? ? member_root_url : admin_root_url
   end
-  def current_user
-  	return @current_user if defined? @current_user
-  	@current_user_session = current_user_session && current_user_session.record
-  end
-  def user_required
-    unless current_user
-      flash[:alert] = "Gotta be logged in foo"
-      redirect_to :login
-      return false
-    end
-  end
-  def no_permission
-    flash[:alert] = "ACCESS DENIED"
+
+  def permission_denied
+    flash[:alert] = "Sorry bro, you don't have access to that page."
     if current_user.is_member?
       redirect_to member_root_url
     elsif current_user.is_admin?
@@ -29,9 +23,23 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def home_page(user)
-    return root_url if user.nil?
-    user.is_member? ? member_root_url : admin_root_url
+  def current_user
+  	return @current_user if defined? @current_user
+  	@current_user = current_user_session && current_user_session.record
   end
 
+  def require_user
+    unless current_user
+      flash[:alert] = "You must be logged in to access that page"
+      redirect_to :login
+      return false
+    end
+  end
+
+  def current_user_session
+    return @current_user_session if defined? @current_user_session
+    @current_user_session = UserSession.find
+  end
+
+  
 end

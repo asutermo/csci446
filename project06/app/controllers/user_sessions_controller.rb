@@ -1,5 +1,4 @@
 class UserSessionsController < ApplicationController
-
   # GET /user_sessions/new
   # GET /user_sessions/new.json
   def new
@@ -7,7 +6,7 @@ class UserSessionsController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @user_session }
+      format.json { render :json => @user_session }
     end
   end
 
@@ -15,14 +14,15 @@ class UserSessionsController < ApplicationController
   # POST /user_sessions.json
   def create
     @user_session = UserSession.new(params[:user_session])
-
+    #user = User.find(params[:username], params[:password])
+    
     respond_to do |format|
-      if @user_session.save
-        format.html { redirect_to home_page(@user_session.user), notice: 'Login verified.' }
-        format.json { render json: @user_session, status: :created, location: @user_session }
+      if @user_session.save 
+        format.html { redirect_to home_url_for(@user_session.user), :notice => 'login successful' }
+        format.json { render :json => @user_session, :status => :created, :location => @user_session }
       else
-        format.html { render action: "new" }
-        format.json { render json: @user_session.errors, status: :unprocessable_entity }
+        format.html { render :action => "new" }
+        format.json { render :json => @user_session.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -34,7 +34,7 @@ class UserSessionsController < ApplicationController
     @user_session.destroy
 
     respond_to do |format|
-      format.html { redirect_to root_url, :notice => 'Logout succeeded' }
+      format.html { redirect_to root_url, :notice => 'Logout successful' }
       format.json { head :no_content }
     end
   end

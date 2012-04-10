@@ -1,27 +1,34 @@
 class User < ActiveRecord::Base
-	attr_accessor:recaptcha
-	belongs_to :role
 	acts_as_authentic
-	has_many :games, :limit => 10, :dependent => :destroy
-	validates :email, :username, :uniqueness => true
-	validates :email, :format => {:with => /\A[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]+\z/, :on => :create}
-	has_attached_file :photo, :styles => {:small => '200x200'}
-	validates_attachment_presence :photo
-	validates :username, :password, :f_name, :l_name, :email, presence: true
-	validates_attachment_content_type :photo, :content_type => ['image/png', 'image/jpeg']
+	has_many :games
+	belongs_to :role
+	has_attached_file :photo
+	validates :f_name, :l_name, :presence => true
+  validates :password, :confirmation => true, :presence => true, :on => :create
+  validates_length_of :password, :minimum => 6, :on => :create
 	validates_length_of :username, :minimum => 6
-	validates_length_of :password, :minimum => 6, :on => :create
 
-	def is_admin?
-		self.groll.eql? "admin"
-	end
+  def full_name
+    self.f_name.capitalize + " " + self.l_name.capitalize
+  end
 
-	def groll
-		self.role.name.downcase
-	end
-
-	def is_member?
-		self.groll.eql? "member"
-	end
-
+  def get_role
+    self.role.name.downcase
+  end
+  
+  def is_member?
+    self.get_role.eql? "member"
+  end
+  
+  def is_admin?
+    self.get_role.eql? "admin"
+  end
+  
+  def to_s
+    self.first_name + ' ' + self.last_name
+  end
+  
+  def role_symbols
+    [role.name.downcase.to_sym]
+  end
 end

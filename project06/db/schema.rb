@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120409125040) do
+ActiveRecord::Schema.define(:version => 20120410044957) do
 
   create_table "games", :force => true do |t|
     t.string   "title"
@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(:version => 20120409125040) do
     t.string   "name"
     t.integer  "users_count"
   end
+
+  add_index "roles", ["name"], :name => "index_roles_on_name", :unique => true
 
   create_table "user_sessions", :force => true do |t|
     t.datetime "created_at", :null => false

@@ -1,19 +1,17 @@
-%h1 Listing games
+%p#notice= notice
+%p#alert= alert
+%h2
+  = "#{@games.count} Total Games"
+= link_to 'Add a game', new_admin_game_path
+%p
+  = will_paginate @games
 %table
   %tr
-    %th Title
-    %th Rating
-    %th User
-    %th
-    %th
-    %th
+    %th.title Title
+    %th.rating Rating
+    %th.date Date Added
   - @games.each do |game|
     %tr
-      %td= game.title
-      %td= game.rating
-      %td= game.user_id
-      %td= link_to 'Show', game
-      %td= link_to 'Edit', edit_game_path(game)
-      %td= link_to 'Destroy', game, confirm: 'Are you sure?', method: :delete
-%br/
-= link_to 'New Game', new_game_path
+      %td.title= game_title(game)
+      %td.rating= game_rating(game)
+      %td.date= game_date(game)

@@ -1,5 +1,7 @@
-class Admin::RolesController < Admin::ApplicationController
-def index
+class Admin::RolesController < Admin::AdminController
+  # GET /roles
+  # GET /roles.json
+  def index
     @roles = Role.paginate(:page => params[:page], :order => 'name asc', :per_page => 10)
     
     respond_to do |format|
@@ -50,7 +52,9 @@ def index
       end
     end
   end
-  
+
+  # PUT /roles/1
+  # PUT /roles/1.json
   def update
     @role = Role.find(params[:id])
 
@@ -76,5 +80,4 @@ def index
       format.json { head :no_content }
     end
   end
-end
 end

@@ -1,6 +1,20 @@
 class Role < ActiveRecord::Base
-	has_many :users
-	validates :name, :presence => true
-	validates_uniqueness_of :name
-	attr_accessible :name, :description
+  attr_accessible :name, :descript
+  
+  validates :name, :presence => true
+  validates_uniqueness_of :name
+  
+  has_many :users
+  
+  def to_s
+    self.name
+  end
+
+  def after_initialize
+    self.name = name.downcase.strip unless name.nil?
+  end
+    
+  def name=(name)
+    self[:name] = name.strip.downcase
+  end
 end

@@ -1,4 +1,4 @@
-= form_for(@game) do |f|
+= form_for [:member, @game] do |f|
   - if @game.errors.any?
     #error_explanation
       %h2
@@ -10,11 +10,14 @@
   .field
     = f.label :title
     = f.text_field :title
+  
   .field
     = f.label :rating
-    = f.number_field :rating
-  .field
-    = f.label :user_id
-    = f.number_field :user_id
+    .radio_buttons
+      - Game::RATINGS.each do |rating|
+        = f.radio_button :rating, rating, :label => rating.humanize
+        = rating.humanize
+        %br
+    
   .actions
-    = f.submit
+    = f.submit 'Save'

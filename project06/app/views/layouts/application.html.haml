@@ -5,12 +5,20 @@
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
-  %body
-  .h_login
-    %div
-      = link_to "Register", new_user_path
+
+  .nav_bar
+    - if current_user.nil?
       = link_to "Login", :login
-  .h_name
+      = link_to "Register", :register
+    - elsif current_user.is_admin?
+      = render :partial => 'layouts/admin_user_bar'
+    - else current_user.is_member?
+      = render :partial => 'layouts/member_user_bar'
+
   %h1
-    = link_to 'Gamez', games_path
-  = yield
+    = link_to "Gamez", root_url
+  
+  - if !current_user.nil? and current_user.is_admin?
+    = render :partial => 'layouts/admin_nav_bar'
+  %body
+    = yield

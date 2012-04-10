@@ -1,4 +1,4 @@
-= form_for(@user) do |f|
+= form_for [:member, @user] do |f|
   - if @user.errors.any?
     #error_explanation
       %h2
@@ -9,26 +9,25 @@
           %li= msg
   .field
     = f.label :username
-    = f.text_field :username
+    = f.text_field :username, :disabled => true
   .field
-    = f.label "Pass"
-    = f.password_field(:password)
+    = f.label :password
+    = f.password_field :password
   .field
-    = f.label "Confirm Pass"
-    = f.password_field(:password_confirmation)
+    = f.label :password_confirmation
+    = f.password_field :password_confirmation
   .field
-    = f.label "First Name"
+    = f.label "First name"
     = f.text_field :f_name
   .field
-    = f.label "Last Name"
+    = f.label "Last name"
     = f.text_field :l_name
   .field
     = f.label :email
     = f.text_field :email
   .field
-    = f.label "Profile Picture"
+    = f.label :photo
     = f.file_field :photo
+    = image_tag @user.photo.url
   .actions
-    = recaptcha_tags
-  .actions
-    = f.submit
+    = f.submit 'Save Changes'

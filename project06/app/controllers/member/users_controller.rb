@@ -1,8 +1,7 @@
-class Member::UsersController < ApplicationController
-
+class Member::UsersController < Member::MemberController
   # GET /users/1/edit
   def edit
-    @user = User.find(params[:id])
+    @user = current_user
   end
 
   # PUT /users/1
@@ -12,11 +11,11 @@ class Member::UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html { redirect_to member_root_path, notice: 'User was successfully updated.' }
+        format.html { redirect_to member_root_path, :notice => 'Successfully updated profile' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        format.html { render :action => "edit" }
+        format.json { render :json => @user.errors, :status => :unprocessable_entity }
       end
     end
   end

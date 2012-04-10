@@ -8,10 +8,12 @@
 Game.delete_all
 User.delete_all
 
-for i in (1..50)
-	User.create(:f_name => 'woot', :l_name => 'wooterson', :email => 'ww#{i}@woot.com', :username => 'wootuser#{i}', :crypted_password => 'password')
-end
+Role.create!(:name => 'admin', :descript => 'A system administrator. Full access to all features.')
+Role.create!(:name => 'member', :descript => 'A member of the site')
 
-for i in (1..50)
-	Game.create(:title => "Game of the Year Sequel Mega #{i}", :rating => 2, :user_id => i)
+User.create!(:username => 'administrator', :password => 'password', :password_confirmation => 'password', :f_name => 'Adolf', :l_name => 'Coors', :email => 'admin@gamez.com', :role_id => Role.find_or_create_by_name("admin").id)
+User.create!(:username => 'member', :password => 'password', :password_confirmation => 'password', :f_name => 'Matz', :l_name => 'Matsumoto', :email => 'member@gamez.com', :role_id => Role.find_or_create_by_name("member").id)
+
+(1..30).each do |i|
+	Game.create!(:title => 'Wisest Wizard', :rating => 'meh', :user_id => 1)
 end

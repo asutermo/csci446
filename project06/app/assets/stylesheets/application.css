@@ -11,3 +11,57 @@
  *= require_self
  *= require_tree .
 */
+.nav_bar{
+  text-align: right;
+  ul {
+  	list-style-type: none;
+  	display: inline;
+  }
+}
+
+.admin_nav_bar{
+  margin-left: 20em;
+  margin-right: 20em;
+  border-width: 1px;
+  border-style: solid;
+
+  text-align: left;
+  ul {
+    list-style-type: none;
+    display: inline;
+  }
+}
+
+a {
+	color:#494949;
+ 	&:visited {color: #666}
+ 	&:hover {
+    color: black;
+	 background-color: #DBDBDB;
+	}
+}
+
+h1 {
+  text-align: center;
+}
+
+label {
+  width: 10em;
+  float: left;
+  text-align: right;
+  margin-right: 3em;
+  display: block; 
+}
+
+.actions {
+  margin-left: 13em;
+}
+
+.radio_buttons {
+  margin-left: 170px;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+}
