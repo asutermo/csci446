@@ -14,7 +14,7 @@
   .field
     = f.label :rating
     .radio_buttons
-      - Game::rate.each do |rating|
+      - Game::RATE.each do |rating|
         = f.radio_button :rating, rating, :label => rating
         = rating
         %br

@@ -1,8 +1,10 @@
 %p#alert= alert
 %p
   = will_paginate @games
-%game_list
+%table
   %tr
     %th.title Title
     %th.rating Rating
     %th.date Date Added
+  - @games.each do |game|
+    %tr

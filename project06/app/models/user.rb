@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   validates_length_of :password, :minimum => 6, :on => :create
 	validates_length_of :username, :minimum => 6
 
+
   def full_name
     self.f_name.capitalize + " " + self.l_name.capitalize
   end
