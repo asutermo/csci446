@@ -18,7 +18,7 @@ class UserSessionsController < ApplicationController
 
     respond_to do |format|
       if @user_session.save
-        format.html { redirect_to @user_session, notice: 'Login verified.' }
+        format.html { redirect_to home_page(@user_session.user, notice: 'Login verified.' }
         format.json { render json: @user_session, status: :created, location: @user_session }
       else
         format.html { render action: "new" }
@@ -34,7 +34,7 @@ class UserSessionsController < ApplicationController
     @user_session.destroy
 
     respond_to do |format|
-      format.html { redirect_to user_sessions_url, :notice => 'Logout succeeded' }
+      format.html { redirect_to root_url, :notice => 'Logout succeeded' }
       format.json { head :no_content }
     end
   end
