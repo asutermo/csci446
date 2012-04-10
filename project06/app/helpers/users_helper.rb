@@ -1,9 +1,9 @@
 module UsersHelper
 	def last_login(user)
-		unless user.last_login_at.nil?
-			time_ago_in_words(user.last_login_at) + ' back'
+		unless user.login_last.nil?
+			time_ago_in_words(user.login_last) + ' back'
 		else
-			"N/A"
+			"No recorded login"
 		end
 	end
 

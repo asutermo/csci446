@@ -29,7 +29,7 @@ module GamesHelper
 
 	def game_rating(game)
 		unless game.rating.blank?
-			game.rating.humanize
+			game.rating
 		else
 			"Unrated"
 		end
