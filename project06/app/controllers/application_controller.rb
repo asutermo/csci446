@@ -11,8 +11,6 @@ class ApplicationController < ActionController::Base
     @current_user = current_user_session && current_user_session.record
   end
 
-  
-
   def current_user_session
     return @current_user_session if defined? @current_user_session
     @current_user_session = UserSession.find
@@ -27,7 +25,8 @@ class ApplicationController < ActionController::Base
     flash[:alert] = "Access denied"
     if current_user.is_member?
       redirect_to member_root_url
-    elsif current_user.is_admin?
+    
+    if current_user.is_admin?
       redirect_to admin_root_url
     else
       redirect_to root_url
