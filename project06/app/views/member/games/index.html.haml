@@ -13,9 +13,9 @@
     %th.buttons
   - @games.each do |game|
     %tr
-      %td.title= game_title(game)
-      %td.rating= game_rating(game)
-      %td.date= game_date(game) 
+      %td.title= g_title(game)
+      %td.rating= g_rating(game)
+      %td.date= g_date(game) 
 %br/
 %p
   = "Created #{pluralize(@games.count, 'game')}, #{percent} rated."

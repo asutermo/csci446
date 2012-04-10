@@ -3,7 +3,6 @@ class Game < ActiveRecord::Base
 	validates :title, :presence => true
 
 	rate = %w[Sucks Mediocre Better Awesome]
-
 	def created_by?(user)
 		self.user_id == user.id
 	end
