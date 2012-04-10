@@ -1,0 +1,19 @@
+Tue, 10 Apr 2012 00:15:32 -0600
+doc/README_FOR_APP	Thu, 22 Mar 2012 12:27:17 -0600
+app/models/game.rb	Tue, 10 Apr 2012 00:09:51 -0600
+app/models/user.rb	Mon, 09 Apr 2012 23:43:06 -0600
+app/models/role.rb	Tue, 10 Apr 2012 00:10:09 -0600
+app/models/user_session.rb	Mon, 09 Apr 2012 18:49:36 -0600
+app/helpers/users_helper.rb	Tue, 10 Apr 2012 00:09:41 -0600
+app/helpers/games_helper.rb	Tue, 10 Apr 2012 00:08:25 -0600
+app/controllers/admin/admin_controller.rb	Tue, 10 Apr 2012 00:03:06 -0600
+app/controllers/admin/games_controller.rb	Mon, 09 Apr 2012 23:59:27 -0600
+app/controllers/admin/users_controller.rb	Mon, 09 Apr 2012 23:59:54 -0600
+app/controllers/admin/roles_controller.rb	Tue, 10 Apr 2012 00:00:11 -0600
+app/controllers/user_sessions_controller.rb	Tue, 10 Apr 2012 00:12:38 -0600
+app/controllers/home_controller.rb	Tue, 10 Apr 2012 00:04:19 -0600
+app/controllers/users_controller.rb	Tue, 10 Apr 2012 00:04:50 -0600
+app/controllers/application_controller.rb	Tue, 10 Apr 2012 00:03:12 -0600
+app/controllers/member/games_controller.rb	Tue, 10 Apr 2012 00:00:47 -0600
+app/controllers/member/member_controller.rb	Tue, 10 Apr 2012 00:02:55 -0600
+app/controllers/member/users_controller.rb	Tue, 10 Apr 2012 00:01:07 -0600
