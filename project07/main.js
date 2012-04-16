@@ -20,3 +20,7 @@ function guess() {
 	guessesLeft--;
 	updateScore(guessesLeft);
 }
+
+function getRandom() {
+	return Math.floor(Math.random() * 101)
+}
