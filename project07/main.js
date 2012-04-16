@@ -1,5 +1,6 @@
 var guessesLeft = 10;
 var highScores = new Array([9, "HarryJamesPotter"], [3, "ZedCthulhu"], [2, "NearlyDied"]);
+var num = Math.random() * 100 + 1;
 
 $(function() {
   updateScore(guessesLeft);
@@ -18,8 +19,8 @@ function updateScore(score) {
 }
 
 function guessNumber() {
+	var gs = document.guessTheNumber.guess.value;
 	guessesLeft--;
-
 	updateScore(guessesLeft);
 
 	if (guessesLeft <= 0) {
