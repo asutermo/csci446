@@ -16,7 +16,12 @@ function updateScore(score) {
   $('h2#score span#guessesLeft').append(score);
 }
 
-function test() {
+function guessNumber() {
 	guessesLeft--;
+
 	updateScore(guessesLeft);
+
+	if (guessesLeft <= 0) {
+		alert("LOSER!!!!");
+	}
 }
