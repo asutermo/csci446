@@ -43,6 +43,8 @@ function guessNumber() {
 	var gss = document.forms["guessTheNumber"].elements["guess"].value;
 	
 	if (gss == num) {
+		$('h3#msg span#message').empty();
+		$('h3#msg span#message').append("You win!!!!!!!");
 		var win = confirm("You won! Do you want to play again?");
 		playAgain(win);
 	}
@@ -55,6 +57,8 @@ function guessNumber() {
 		$('h3#msg span#message').append("Too high!!!");
 	}
 	if (guessesLeft <= 0) {
+		$('h3#msg span#message').empty();
+		$('h3#msg span#message').append("You lose!!!!!!!");
 		var lose = confirm("LOSER!!!! Want to play again?");
 		playAgain(lose);
 	}
