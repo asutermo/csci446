@@ -28,13 +28,18 @@ function playAgain(continueGame) {
 		location.reload();
 	}
 	else {
-
+		document.getElementById("btnGuess").onclick=play();
+		document.getElementById("btnGuess").value="Play again?";
 	}
+}
+
+function play() {
+	location.reload();
 }
 
 function guessNumber() {
 	guessesLeft--;
-	
+
 	updateScore(guessesLeft);
 
 	var gss = document.forms["guessTheNumber"].elements["guess"].value;
