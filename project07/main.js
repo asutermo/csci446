@@ -28,8 +28,16 @@ function guessNumber() {
 	updateScore(guessesLeft);
 
 	var gss = document.forms["guessTheNumber"].elements["guess"].value;
-	alert(gss);
-
+	
+	if (gss == num) {
+		alert("You win!!!");
+	}
+	if (gss < num) {
+		alert("Too low!!!");
+	}
+	if (gss > num) {
+		alert("Too high!!!");
+	}
 	if (guessesLeft <= 0) {
 		alert("LOSER!!!!");
 	}
