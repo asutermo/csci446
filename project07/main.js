@@ -17,6 +17,8 @@ function updateScore(score) {
 }
 
 function guess() {
+	var guess = parseInt(document.forms[0].guess.value)
+	documents.forms[0].guess.value = num;
 	guessesLeft--;
 	updateScore(guessesLeft);
 }
