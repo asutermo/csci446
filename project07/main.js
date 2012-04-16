@@ -47,10 +47,12 @@ function guessNumber() {
 		playAgain(win);
 	}
 	if (gss < num) {
-		alert("Too low!!!");
+		$('h3#msg span#message').empty();
+		$('h3#msg span#message').append("Too low!!!");
 	}
 	if (gss > num) {
-		alert("Too high!!!");
+		$('h3#msg span#message').empty();
+		$('h3#msg span#message').append("Too high!!!");
 	}
 	if (guessesLeft <= 0) {
 		var lose = confirm("LOSER!!!! Want to play again?");

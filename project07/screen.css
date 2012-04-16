@@ -25,15 +25,6 @@ h2#score {
   color: #FFC125;
   margin: 0px;
 }
-
-input#guess {
-  font-size: 8em;
-}
-
-input#btnGuess {
-  font-size: 20em;
-}
-
 form#guessTheNumber {
   width: 50%;
   margin: auto;
