@@ -28,8 +28,7 @@ function playAgain(continueGame) {
 		location.reload();
 	}
 	else {
-		document.getElementById("btnGuess").onclick=play();
-		document.getElementById("btnGuess").value="Play again?";
+		document.getElementById("btnGuess").value="Reset game below to play again!";
 	}
 }
 
@@ -39,7 +38,6 @@ function play() {
 
 function guessNumber() {
 	guessesLeft--;
-
 	updateScore(guessesLeft);
 
 	var gss = document.forms["guessTheNumber"].elements["guess"].value;
