@@ -23,6 +23,15 @@ function updateScore(score) {
   $('h2#score span#guessesLeft').append(score);
 }
 
+function playAgain(continueGame) {
+	if (continueGame == true) {
+		location.reload();
+	}
+	else {
+
+	}
+}
+
 function guessNumber() {
 	guessesLeft--;
 	updateScore(guessesLeft);
@@ -30,7 +39,8 @@ function guessNumber() {
 	var gss = document.forms["guessTheNumber"].elements["guess"].value;
 	
 	if (gss == num) {
-		alert("You win!!!");
+		var win = confirm("You won! Do you want to play again?");
+		playAgain(win);
 	}
 	if (gss < num) {
 		alert("Too low!!!");
@@ -39,6 +49,7 @@ function guessNumber() {
 		alert("Too high!!!");
 	}
 	if (guessesLeft <= 0) {
-		alert("LOSER!!!!");
+		var lose = confirm("LOSER!!!! Want to play again?");
+		playAgain(lose);
 	}
 }
