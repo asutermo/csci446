@@ -27,7 +27,9 @@ function guessNumber() {
 	guessesLeft--;
 	updateScore(guessesLeft);
 
-	
+	var gss = document.forms["guessTheNumber"].elements["guess"].value;
+	alert(gss);
+
 	if (guessesLeft <= 0) {
 		alert("LOSER!!!!");
 	}
