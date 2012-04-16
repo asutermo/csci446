@@ -1,6 +1,5 @@
 var guessesLeft = 10;
 var highScores = new Array([9, "HarryJamesPotter"], [3, "ZedCthulhu"], [2, "NearlyDied"]);
-
 $(function() {
   updateScore(guessesLeft);
   populateHighScores(highScores);
@@ -17,6 +16,7 @@ function updateScore(score) {
 }
 
 function guess() {
+	alert("Guess button pressed!");
 	var guess = parseInt(document.forms[0].guess.value)
 	documents.forms[0].guess.value = num;
 	guessesLeft--;
