@@ -34,6 +34,7 @@ function playAgain(continueGame) {
 
 function guessNumber() {
 	guessesLeft--;
+	
 	updateScore(guessesLeft);
 
 	var gss = document.forms["guessTheNumber"].elements["guess"].value;
