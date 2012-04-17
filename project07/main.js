@@ -9,12 +9,14 @@ $(function() {
 });
 
 function populateHighScores(scores) {
-  for (var i = 0; i < scores.length; ++i) {
+   $('div#highScores').empty();
+   for (var i = 0; i < scores.length; ++i) {
     $('div#highScores').append("<p>" + scores[i][0] + " " + scores[i][1] + "</p>");
   }
 }
 
 function displayRandom(randomNum) {
+  $('h2#number span#numberToGuess').empty();
   $('h2#number span#numberToGuess').append(randomNum);
 }
 
@@ -23,10 +25,14 @@ function updateScore(score) {
   $('h2#score span#guessesLeft').append(score);
 }
 
-function playAgain(continueGame) {
-	if (continueGame == true) {
+function playAgain() {
+	var cont = confirm("Do you want to play again?");
+	if (cont == true) {
 		document.getElementById("btnGuess").disabled=false;
-		location.reload();
+		guessesLeft = 10;
+		num = Math.floor(Math.random() * 100 + 1);
+		updateScore(guessesLeft);
+		displayRandom(num);
 	}
 	else {
 		document.getElementById("btnGuess").disabled=true;
@@ -45,8 +51,11 @@ function guessNumber() {
 	var gss = document.forms["guessTheNumber"].elements["guess"].value;
 	
 	if (gss == num) {
-		var win = confirm("You won! Do you want to play again?");
-		playAgain(win);
+		var name = prompt("You won! Enter your name: ", "Name")
+		var hs = guessesLeft;
+		highScores.push([hs, name]);
+		populateHighScores(highScores);
+		playAgain();
 	}
 	if (gss < num) {
 		var sMessage = 'Too low';
@@ -65,7 +74,7 @@ function guessNumber() {
 		});
 	}
 	if (guessesLeft <= 0) {
-		var lose = confirm("LOSER!!!! Want to play again?");
-		playAgain(lose);
+		alert("LOSER!!!!");
+		playAgain(l);
 	}
 }
