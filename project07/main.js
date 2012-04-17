@@ -51,12 +51,22 @@ function guessNumber() {
 		playAgain(win);
 	}
 	if (gss < num) {
-		var sMessage = 'Too low!';
-		popMessage(sMessage);
+		var sMessage = 'Too low';
+		$('lowContainer').empty();
+		$('body').append('<div style="display:none" id="lowContainer">'+sMessage+'</div>');
+		$('#lowContainer').css({position:'absolute',top:'40px',left:'50%',marginLeft:'-220px',fontWeight:'bold',lineHeight:'2em', background:'white',border:'3px double #ccc',padding:'100px'}).fadeIn('slow',function(){
+			setTimeout(function(){$('#lowContainer').fadeOut()},1000);
+		});
 		$('h3#msg span#message').empty();
 		$('h3#msg span#message').append("Too low!!!");
 	}
 	if (gss > num) {
+		var sMessage = 'Too high';
+		$('highContainer').empty();
+		$('body').append('<div style="display:none" id="highContainer">'+sMessage+'</div>');
+		$('#highContainer').css({position:'absolute',top:'40px',left:'50%',marginLeft:'-220px',fontWeight:'bold',lineHeight:'2em', background:'white',border:'3px double #ccc',padding:'100px'}).fadeIn('slow',function(){
+			setTimeout(function(){$('#highContainer').fadeOut()},1000);
+		});
 		$('h3#msg span#message').empty();
 		$('h3#msg span#message').append("Too high!!!");
 	}
@@ -66,11 +76,4 @@ function guessNumber() {
 		var lose = confirm("LOSER!!!! Want to play again?");
 		playAgain(lose);
 	}
-}
-
-function popMessage(msg) {
-	$('body').append('<div style="display:none" id="tooLow">'+msg+'</div>');
-	$('#tooLow').css({position:'absolute',top:'40px',left:'50%',marginLeft:'-220px',fontWeight:'bold',lineHeight:'2em', background:'white',border:'3px double #ccc',padding:'100px'}).fadeIn('slow',function(){
-	setTimeout(function(){$('#orderInstructionContainer').fadeOut()},2000);
-	});
 }
