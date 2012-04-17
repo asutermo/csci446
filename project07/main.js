@@ -47,6 +47,7 @@ function play() {
 	updateScore(guessesLeft);
 	displayRandom(num);
 	document.getElementById("btnGuess").disabled=false;
+	document.getElementById("btnGuess").value="Guess";
 
 }
 
@@ -58,6 +59,9 @@ function guessNumber() {
 	
 	if (gss == num) {
 		var name = prompt("You won! Enter your name: ", "Name")
+		if (name == null) {
+			name = "Anonymous";
+		}
 		var hs = guessesLeft;
 		highScores.push([hs, name]);
 		populateHighScores(highScores);
