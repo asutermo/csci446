@@ -47,6 +47,7 @@ function play() {
 	updateScore(guessesLeft);
 	displayRandom(num);
 	document.getElementById("btnGuess").disabled=false;
+
 }
 
 function guessNumber() {
@@ -62,7 +63,11 @@ function guessNumber() {
 		populateHighScores(highScores);
 		playAgain();
 	}
-	if (gss < num) {
+	else if (guessesLeft <= 0) {
+		alert("LOSER!!!!");
+		playAgain();
+	}
+	else if (gss < num) {
 		var sMessage = 'Too low';
 		$('lowContainer').empty();
 		$('body').append('<div style="display:none" id="lowContainer">'+sMessage+'</div>');
@@ -70,7 +75,7 @@ function guessNumber() {
 			setTimeout(function(){$('#lowContainer').fadeOut()},1000);
 		});
 	}
-	if (gss > num) {
+	else if (gss > num) {
 		var sMessage = 'Too high';
 		$('highContainer').empty();
 		$('body').append('<div style="display:none" id="highContainer">'+sMessage+'</div>');
@@ -78,8 +83,5 @@ function guessNumber() {
 			setTimeout(function(){$('#highContainer').fadeOut()},1000);
 		});
 	}
-	if (guessesLeft <= 0) {
-		alert("LOSER!!!!");
-		playAgain();
-	}
+	
 }
