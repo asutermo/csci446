@@ -25,9 +25,11 @@ function updateScore(score) {
 
 function playAgain(continueGame) {
 	if (continueGame == true) {
+		document.getElementById("btnGuess").disabled=false;
 		location.reload();
 	}
 	else {
+		document.getElementById("btnGuess").disabled=true;
 		document.getElementById("btnGuess").value="Reset game below to play again!";
 	}
 }
