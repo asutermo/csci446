@@ -28,11 +28,12 @@ function updateScore(score) {
 function playAgain() {
 	var cont = confirm("Do you want to play again?");
 	if (cont == true) {
-		document.getElementById("btnGuess").disabled=false;
 		guessesLeft = 10;
 		num = Math.floor(Math.random() * 100 + 1);
 		updateScore(guessesLeft);
 		displayRandom(num);
+
+		document.getElementById("btnGuess").disabled=false;
 	}
 	else {
 		document.getElementById("btnGuess").disabled=true;
@@ -41,7 +42,11 @@ function playAgain() {
 }
 
 function play() {
-	location.reload();
+	guessesLeft = 10;
+	num = Math.floor(Math.random() * 100 + 1);
+	updateScore(guessesLeft);
+	displayRandom(num);
+	document.getElementById("btnGuess").disabled=false;
 }
 
 function guessNumber() {
@@ -75,6 +80,6 @@ function guessNumber() {
 	}
 	if (guessesLeft <= 0) {
 		alert("LOSER!!!!");
-		playAgain(l);
+		playAgain();
 	}
 }
