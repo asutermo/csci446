@@ -45,8 +45,6 @@ function guessNumber() {
 	var gss = document.forms["guessTheNumber"].elements["guess"].value;
 	
 	if (gss == num) {
-		$('h3#msg span#message').empty();
-		$('h3#msg span#message').append("You win!!!!!!!");
 		var win = confirm("You won! Do you want to play again?");
 		playAgain(win);
 	}
@@ -54,25 +52,19 @@ function guessNumber() {
 		var sMessage = 'Too low';
 		$('lowContainer').empty();
 		$('body').append('<div style="display:none" id="lowContainer">'+sMessage+'</div>');
-		$('#lowContainer').css({position:'absolute',top:'40px',left:'50%',marginLeft:'-220px',fontWeight:'bold',lineHeight:'2em', background:'white',border:'3px double #ccc',padding:'100px'}).fadeIn('slow',function(){
+		$('#lowContainer').css({position:'absolute',top:'10em',left:'35%',marginLeft:'0em',fontWeight:'bold',lineHeight:'2em', background:'#313131',border:'3px double #ccc',padding:'100px'}).fadeIn('slow',function(){
 			setTimeout(function(){$('#lowContainer').fadeOut()},1000);
 		});
-		$('h3#msg span#message').empty();
-		$('h3#msg span#message').append("Too low!!!");
 	}
 	if (gss > num) {
 		var sMessage = 'Too high';
 		$('highContainer').empty();
 		$('body').append('<div style="display:none" id="highContainer">'+sMessage+'</div>');
-		$('#highContainer').css({position:'absolute',top:'40px',left:'50%',marginLeft:'-220px',fontWeight:'bold',lineHeight:'2em', background:'white',border:'3px double #ccc',padding:'100px'}).fadeIn('slow',function(){
+		$('#highContainer').css({position:'absolute',top:'10em',left:'35%',marginLeft:'0em',fontWeight:'bold',lineHeight:'2em', background:'#313131',border:'3px double #ccc',padding:'100px'}).fadeIn('slow',function(){
 			setTimeout(function(){$('#highContainer').fadeOut()},1000);
 		});
-		$('h3#msg span#message').empty();
-		$('h3#msg span#message').append("Too high!!!");
 	}
 	if (guessesLeft <= 0) {
-		$('h3#msg span#message').empty();
-		$('h3#msg span#message').append("You lose!!!!!!!");
 		var lose = confirm("LOSER!!!! Want to play again?");
 		playAgain(lose);
 	}
